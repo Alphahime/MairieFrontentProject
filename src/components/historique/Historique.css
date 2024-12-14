@@ -1,0 +1,139 @@
+/* Styles généraux */
+.historique-page {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Section Hero */
+.hero-historique {
+  background-image: url("/src/assets/images/thiaroyehistory.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 60vh;
+  border-radius: 8px;
+}
+
+.hero-historique h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-historique p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Contenu */
+.content-section {
+  padding: 50px 20px;
+  background: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-text {
+  width: 50%;
+  padding: 20px;
+}
+
+.section-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.section-text p,
+.section-text ul {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.section-text ul li {
+  margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-historique h1 {
+    font-size: 32px;
+  }
+
+  .section-item {
+    flex-direction: column;
+  }
+
+  .section-image,
+  .section-text {
+    width: 100%;
+  }
+}
+
+
+.accordion {
+  list-style: none;
+  padding: 0;
+}
+
+.accordion li {
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.accordion-button.active {
+  background: #e0e0e0;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 0.5rem 1rem;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: -1px;
+  background: #fafafa;
+  font-size: 0.9rem;
+}
