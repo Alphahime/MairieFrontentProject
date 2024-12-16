@@ -4,13 +4,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
   }
   
   a {
     text-decoration: none;
     color: inherit;
   }
-  
+ 
 
   /* Hero Section */
   .hero {
@@ -52,7 +53,8 @@ body {
   
   .hero .btn-get-started,
   .hero .btn-watch-video {
-    background-color: #007bff;
+    background-color: 
+    #32bde8;
     color: #fff;
     padding: 12px 25px;
     border-radius: 5px;
@@ -65,7 +67,8 @@ body {
   
   .hero .btn-get-started:hover,
   .hero .btn-watch-video:hover {
-    background-color: #0056b3;
+    background-color: 
+    #32bde8;
   }
   
   .hero .glightbox {
@@ -138,18 +141,23 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about .image-wrapper .banner {
+.about .image-wrapper .bannermaire {
   position: absolute;
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #007bff;
+  background-color: 
+  #32bde8;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 18px;
+  border-radius: 2px;
+  
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bannermaire h3 {
+  font-size: 14px;
 }
 
 .about .social-icons {
@@ -176,16 +184,18 @@ body {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #007BFF; /* Bleu principal */
+  background-color: 
+  #32bde8; /* Bleu principal */
   border: none;
-  border-radius: 1rem; /* Bords arrondis */
+  border-radius: 2px; /* Bords arrondis */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .historique-button:hover {
-  background-color: #0056b3; /* Couleur plus foncée au survol */
+  background-color: 
+  #32bde8; /* Couleur plus foncée au survol */
   transform: translateY(-3px); /* Effet de déplacement au survol */
 }
 
@@ -306,7 +316,8 @@ body {
 
 .card-title {
   font-size: 1.6rem;
-  color: #007BFF;
+  color: 
+  #32bde8;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
@@ -323,9 +334,11 @@ body {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: bold;
-  color: #ff0000; /* Couleur rouge */
+  color: 
+  #9b1812; /* Couleur rouge */
   text-decoration: none;
-  border: 2px solid #ff0000; /* Bordure rouge */
+  border: 2px solid 
+  #9b1812; /* Bordure rouge */
   border-radius: 5px;
   background-color: transparent; /* Fond transparent */
   transition: all 0.3s ease;
@@ -335,7 +348,8 @@ body {
 
 .card-link:hover {
   color: #ffffff; /* Texte devient blanc */
-  background-color: #ff0000; /* Fond rouge */
+  background-color: 
+  #9b1812; /* Fond rouge */
 }
 
 .card-link::after {
@@ -362,8 +376,15 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
+
+
+
 
 .text-side {
   flex: 1;
@@ -403,6 +424,7 @@ body {
   text-align: center;
   max-width: 180px;  /* Réduit la taille des cartes */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .service-card:hover {
@@ -413,7 +435,7 @@ body {
 .service-icon {
   font-size: 1.8rem; /* Réduit la taille des icônes */
   color: #fff;
-  background-color: #66b3ff;  /* Bleu clair pour le fond */
+  background-color: #32bde8;  /* Bleu clair pour le fond */
   padding: 0.8rem;  /* Réduit le padding pour icône */
   border-radius: 50%;
   margin-bottom: 0.8rem;
@@ -559,7 +581,8 @@ body {
 .members-btn {
   display: flex;
   align-items: center;
-  background-color: #007bff;
+  background-color: 
+  #32bde8;
   color: #fff;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -575,7 +598,8 @@ body {
 }
 
 .members-btn:hover {
-  background-color: #0056b3; /* Couleur de fond au survol */
+  background-color: 
+  #32bde8; /* Couleur de fond au survol */
   transform: scale(1.05); /* Animation d'agrandissement au survol */
 }
 

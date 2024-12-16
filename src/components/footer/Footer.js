@@ -1,7 +1,6 @@
-// src/components/footer/Footer.js
-
 import React from 'react';
 import './Footer.css'; 
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Icônes réseaux sociaux
 
 const Footer = () => {
   return (
@@ -9,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h3>Mairie Thiaroye Sur Mer</h3>
-          <p className="footer-address">Adresse: Pikine , Thiaroye Sur Mer</p>
+          <p className="footer-address">Adresse: Pikine, Thiaroye Sur Mer</p>
         </div>
 
         <div className="footer-section">
@@ -44,6 +43,13 @@ const Footer = () => {
           <h4>Réclamations</h4>
           <button className="reclamation-btn">Cliquez ici pour réclamation</button>
         </div>
+      </div>
+
+      <div className="footer-socials">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
       </div>
 
       <div className="footer-bottom">

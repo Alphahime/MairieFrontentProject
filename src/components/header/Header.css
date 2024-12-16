@@ -41,9 +41,13 @@
   
   .navmenu ul li a:hover,
   .navmenu ul li a.active {
-    color: #ffffff;
-    background-color: #007bff;
+      color: 
+      #32bde8; /* Couleur du texte pour les onglets actifs ou survolés */
+      background-color: transparent; /* Supprime le fond bleu */
+      border-bottom: 2px solid 
+      #32bde8; /* Ajoute un trait soulignant */
   }
+  
   
   /* Dropdown Styles */
   .navmenu ul li .dropdown-menu {
@@ -82,7 +86,8 @@
   }
   
   .navmenu ul li .dropdown-menu li a:hover {
-    background-color: #007bff;
+    background-color: 
+    #32bde8;
     color: #fff;
   }
   
@@ -98,4 +103,6 @@
     opacity: 1;
     transform: translateX(0);
   }
+  
+
   

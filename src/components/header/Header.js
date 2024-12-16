@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header id="header" className="header fixed-top">
+
+   
+
       <div className="branding d-flex align-items-center">
         <div className="container position-relative d-flex align-items-center justify-content-between">
           <div className="logo"></div>

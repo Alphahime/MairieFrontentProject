@@ -32,7 +32,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    padding-top: 28rem;
+    padding-top: 18rem;
   }
   
   /* Boutons de navigation */
@@ -66,7 +66,9 @@
   
   .explore-btn {
     display: inline-block;
-    background-color: #007bff;
+    background-color: transparent;
+    border: 2px solid 
+    #32bde8 ;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -77,6 +79,7 @@
   }
   
   .explore-btn:hover {
-    background-color: #0056b3;
+    background-color: 
+    #32bde8;
   }
   

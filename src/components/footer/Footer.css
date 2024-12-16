@@ -1,50 +1,90 @@
-/* src/components/footer/Footer.css */
-
+/* Footer général */
 .footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .footer-section {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-section h3, .footer-section h4 {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin: 5px 0;
-  }
-  
-  .reclamation-btn {
-    background-color: #66b3ff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .reclamation-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-  }
-  
+  background-color: #2c3e50; /* Fond sombre pour le footer */
+  color: #ecf0f1; /* Texte blanc/gris clair */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenu du footer */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacement entre les sections */
+}
+
+/* Sections du footer */
+.footer-section {
+  flex: 1;
+  min-width: 250px; /* Largeur minimale pour chaque section */
+  padding: 20px;
+}
+
+/* Titres des sections */
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Liste dans les sections */
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+/* Style des liens */
+.footer-section a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #3498db; /* Bleu clair au survol */
+}
+
+/* Bouton de réclamation */
+.reclamation-btn {
+  background-color: 
+  #32bde8;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1rem;
+}
+
+.reclamation-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Zone du bas du footer */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+/* Icônes des réseaux sociaux */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #3498db;
+}
