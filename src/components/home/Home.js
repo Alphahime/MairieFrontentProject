@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import { FaFileAlt, FaClipboard, FaCalendarAlt, FaBuilding ,FaHistory, FaRegFileAlt ,FaRegCalendarAlt, FaRegBuilding , FaRegHandshake} from 'react-icons/fa';
+// import { FaFileAlt, FaClipboard, FaCalendarAlt, FaBuilding, FaRegFileAlt, FaRegCalendarAlt, FaRegBuilding, FaRegHandshake } from 'react-icons/fa';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { FaPhoneAlt, FaEnvelope, FaShareAlt, FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
@@ -8,6 +9,8 @@ import BannerSlider from "../BannerSlider";
 import pecheImage from '../../assets/images/peche.jpeg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+
 
 AOS.init();
 
@@ -45,11 +48,61 @@ const Home = () => {
       
       <BannerSlider />
 
+      <section id="actualites" className="actualites-section">
+  <h2 className="section-title">Actualités et Annonces</h2>
+  <div className="actualites-container">
+    <div className="card">
+      <img
+        src={require('../../assets/images/cemthiaroyesurmer.jpg')}
+        alt="Travaux de réfection des routes"
+        className="card-image"
+      />
+      <div className="card-content-wrapper">
+        <h3 className="card-title">Travaux de réfection des routes</h3>
+        <p className="card-content">
+          La mairie commence les travaux de réfection des routes principales dès la semaine prochaine.
+        </p>
+        <a href="#" className="card-link"><span>Découvrir</span></a>
+      </div>
+    </div>
+    <div className="card">
+      <img
+        src={require('../../assets/images/FoireThiaroye.jpeg')}
+        alt="Réunion publique"
+        className="card-image"
+      />
+      <div className="card-content-wrapper">
+        <h3 className="card-title">Foire 2024</h3>
+        <p className="card-content">
+          Une réunion publique se tiendra le 10 décembre à 18h pour discuter des nouveaux projets.
+        </p>
+        <a href="#" className="card-link"><span>Découvrir</span></a>
+      </div>
+    </div>
+    <div className="card">
+      <img
+        src={require('../../assets/images/peche.jpeg')}
+        alt="Lancement du budget participatif"
+        className="card-image"
+      />
+     <div className="card-content-wrapper">
+  <h3 className="card-title">Lancement du budget participatif</h3>
+  <p className="card-content">
+    Participez à l'élaboration du budget municipal 2024 en partageant vos idées.
+  </p>
+  <Link to="/actualite" className="card-link">
+    <span>Découvrir</span>
+  </Link>
+</div>
+    </div>
+  </div>
+</section>
+
         <section id="about" className="about">
   <div className="container">
     <div className="row">
       <div className="col text">
-        <h2>À propos </h2>
+        <h2>Mots du maire </h2>
         <p>
           La Mairie de Thiaroye sur Mer met en œuvre des projets innovants pour
           le développement de la ville, en valorisant son patrimoine, son
@@ -99,113 +152,66 @@ const Home = () => {
 
       </main>
 
-      <section id="actualites" className="actualites-section">
-  <h2 className="section-title">Actualités et Annonces</h2>
-  <div className="actualites-container">
-    <div className="card">
-      <img
-        src={require('../../assets/images/cemthiaroyesurmer.jpg')}
-        alt="Travaux de réfection des routes"
-        className="card-image"
-      />
-      <div className="card-content-wrapper">
-        <h3 className="card-title">Travaux de réfection des routes</h3>
-        <p className="card-content">
-          La mairie commence les travaux de réfection des routes principales dès la semaine prochaine.
-        </p>
-        <a href="#" className="card-link"><span>Découvrir</span></a>
-      </div>
-    </div>
-    <div className="card">
-      <img
-        src={require('../../assets/images/FoireThiaroye.jpeg')}
-        alt="Réunion publique"
-        className="card-image"
-      />
-      <div className="card-content-wrapper">
-        <h3 className="card-title">Foire 2024</h3>
-        <p className="card-content">
-          Une réunion publique se tiendra le 10 décembre à 18h pour discuter des nouveaux projets.
-        </p>
-        <a href="#" className="card-link"><span>Découvrir</span></a>
-      </div>
-    </div>
-    <div className="card">
-      <img
-        src={require('../../assets/images/peche.jpeg')}
-        alt="Lancement du budget participatif"
-        className="card-image"
-      />
-      <div className="card-content-wrapper">
-        <h3 className="card-title">Lancement du budget participatif</h3>
-        <p className="card-content">
-          Participez à l'élaboration du budget municipal 2024 en partageant vos idées.
-        </p>
-        <a href="#" className="card-link"><span>Découvrir</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+     
 
 <h2 className="section-title">Accès rapide aux services</h2>
-<section id="quick-services" className="quick-services-section" style={{
-        backgroundImage: `url(${pecheImage})`,
-      }}>
-
-  <div className="text-side">
- 
- <div class="cards">
-      <p class="card-title">Product Name</p>
-      <p class="small-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
-        veritatis nobis saepe itaque rerum nostrum aliquid obcaecati odio
-        officia deleniti. Expedita iste et illum, quaerat pariatur consequatur
-        eum nihil itaque!
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
+   <section id="quick-services" className="quick-services-section" style={{ backgroundImage: `url(${pecheImage})` }}>
+      <div className="text-side">
+        <div className="cards">
+          <p className="card-title">Services en ligne</p>
+          <p className="small-desc">
+            Découvrez les services en ligne proposés par votre mairie pour simplifier vos démarches administratives.
+            Accédez à des services tels que la demande de certificats, l'inscription aux événements municipaux,
+            la prise de rendez-vous avec les services de la mairie, et bien plus encore.
+          </p>
+          <div className="go-corner">
+            <div className="go-arrow">→</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div id="services-side" className="services-side">
-    <div className="services-container">
-      <div className="service-card">
+      <div id="services-side" className="services-side">
+        <div className="services-container">
+        <Link to="/acte-naissance" className="service-card-link">
+         <div className="service-card">
         <FaFileAlt className="service-icon" />
         <h3 className="service-title">Demande d’acte de naissance</h3>
-      </div>
-      <div className="service-card">
-        <FaClipboard className="service-icon" />
-        <h3 className="service-title">Consultation des projets municipaux</h3>
-      </div>
+        </div>
+      </Link>
+
+          <div className="service-card">
+            <FaClipboard className="service-icon" />
+            <h3 className="service-title">Consultation des projets municipaux</h3>
+          </div>
+          <Link to="/rendezvous" className="service-card-link"> {/* Lien vers la page de RendezVous */}
       <div className="service-card">
         <FaCalendarAlt className="service-icon" />
         <h3 className="service-title">Prendre un rendez-vous</h3>
       </div>
-      <div className="service-card">
-        <FaBuilding className="service-icon" />
-        <h3 className="service-title">Demande de permis de construction</h3>
+    </Link>
+          <div className="service-card">
+            <FaBuilding className="service-icon" />
+            <h3 className="service-title">Demande de permis de construction</h3>
+          </div>
+          <div className="service-card">
+            <FaRegFileAlt className="service-icon" />
+            <h3 className="service-title">Extrait de naissance</h3>
+          </div>
+          <div className="service-card">
+            <FaRegCalendarAlt className="service-icon" />
+            <h3 className="service-title">Bulletin de décès</h3>
+          </div>
+          <div className="service-card">
+            <FaRegBuilding className="service-icon" />
+            <h3 className="service-title">Certificat de mariage</h3>
+          </div>
+          <div className="service-card">
+            <FaRegHandshake className="service-icon" />
+            <h3 className="service-title">Certificat de divorce</h3>
+          </div>
+        </div>
       </div>
-      <div className="service-card">
-        <FaRegFileAlt className="service-icon" />
-        <h3 className="service-title">Extrait de naissance</h3>
-      </div>
-      <div className="service-card">
-        <FaRegCalendarAlt className="service-icon" />
-        <h3 className="service-title">Bulletin de décès</h3>
-      </div>
-      <div className="service-card">
-        <FaRegBuilding className="service-icon" />
-        <h3 className="service-title">Certificat de mariage</h3>
-      </div>
-      <div className="service-card">
-        <FaRegHandshake className="service-icon" />
-        <h3 className="service-title">Certificat de divorce</h3>
-      </div>
-    </div>
-   
-  </div>
-</section>
+    </section>
 
   
 <section id="personnalites-mairie" className="personnalites-section">

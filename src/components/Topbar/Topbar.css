@@ -1,0 +1,77 @@
+/* Conteneur global de la topbar */
+.topbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f9fa; 
+    width: 100%;
+    height: 50px;
+    background-color: #32bde8;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: white;
+    font-weight: 800;
+    border-bottom: 1px solid #ddd; 
+    
+  }
+  
+  /* Section de gauche (infos) */
+  .topbar-left {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+  
+ /* Section de droite (icônes des réseaux sociaux) */
+/* .topbar-right {
+    display: flex;
+    gap: 15px; 
+  }
+   */
+  /* .social-icon {
+    text-decoration: none;
+    color: #333; 
+    font-size: 20px; 
+    transition: color 0.3s ease;
+  }
+   */
+  .social-icon:hover {
+    color: #9b1812; /* Couleur au survol */
+  }
+  
+  .footer-socialstopbar {
+    display: flex; /* Pour aligner les icônes horizontalement */
+    justify-content: center; /* Centrer les icônes horizontalement */
+    align-items: center; /* Centrer les icônes verticalement */
+    gap: 15px; /* Espacement entre les icônes */
+    margin: 20px 0; /* Marge autour du conteneur */
+  }
+  
+  .footer-socialstopbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Supprime le soulignement */
+    color: #32bde8; /* Couleur par défaut des icônes */
+    background-color: white; /* Couleur de fond pour chaque icône */
+    border-radius: 50%; /* Pour rendre les icônes circulaires */
+    width: 28px; /* Largeur de l'icône */
+    height: 28px; /* Hauteur de l'icône */
+    font-size: 18px; /* Taille des icônes */
+    transition: all 0.3s ease; /* Transition douce pour les effets au survol */
+  }
+  
+  .footer-socialstopbar a:hover {
+    color: #9b1812; /* Couleur des icônes au survol */
+    background-color: #ffffff; /* Couleur de fond au survol */
+    transform: scale(1.1); /* Agrandit légèrement les icônes au survol */
+  }
+  .footer-socialstopbar a.whatsapp {
+    background-color: #25d366; /* Couleur de fond WhatsApp */
+    color: white; /* Couleur de l'icône */
+  }
+  
+  .footer-socialstopbar a.whatsapp:hover {
+    background-color: #128c7e; /* Couleur de fond WhatsApp au survol */
+  }
+  

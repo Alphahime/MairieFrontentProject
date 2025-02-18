@@ -1,0 +1,117 @@
+.actualite-container {
+    background-color: #f8f9fa;
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .actualite-banner {
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* Ajustez la hauteur de la bannière */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Superposition sombre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .actualite-banner h2 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .actualite-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .actualite-detail {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+  }
+  
+  .actualite-title {
+    font-size: 28px;
+    color: #32bde8;
+    margin-bottom: 20px;
+  }
+  
+  .actualite-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .actualite-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .actualite-extended-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  
+  .card-link {
+    color: #32bde8;
+    text-decoration: none;
+  }
+  
+  .card-link span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .actualite-similaires {
+    width: 25%;
+  }
+  
+  .similar-actualite-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .similar-actualite-card h5 {
+    font-size: 18px;
+    color: #32bde8;
+  }
+  
+  .similar-actualite-card p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .similar-actualite-card .card-link {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  

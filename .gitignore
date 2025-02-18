@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Autres fichiers temporaires ou générés
+.idea/               # Paramètres d'IDE (ex. WebStorm, IntelliJ)
+.vscode/             # Paramètres VS Code
+*.log                # Autres logs générés
+*.lock               

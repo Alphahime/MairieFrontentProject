@@ -137,3 +137,40 @@
   background: #fafafa;
   font-size: 0.9rem;
 }
+/* Ajouts pour les nouvelles sections */
+.section-item.reverse .section-text {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.section-item.reverse .section-image {
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+/* Style pour les images */
+.section-image {
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.05);
+}
+
+/* Style pour les titres */
+.section-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-transform: uppercase;
+}
+
+/* Style pour les paragraphes */
+.section-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+}
