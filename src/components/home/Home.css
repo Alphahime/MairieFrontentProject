@@ -81,7 +81,7 @@ body {
     margin-left: 5px;
   }
   
- /* About Section */
+/* About Section */
 .about {
   padding: 80px 0;
   background: linear-gradient(135deg, #f5f5f5 0%, #e0f7fa 100%);
@@ -98,7 +98,6 @@ body {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-
 }
 
 .about .row {
@@ -114,12 +113,16 @@ body {
   padding: 20px;
 }
 
-.about .text {
+.about .card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
   max-width: 500px;
 }
 
-.about .text h2 {
+.about .card h2 {
   font-size: 42px;
   margin-bottom: 20px;
   color: #333;
@@ -127,7 +130,7 @@ body {
   font-weight: 600;
 }
 
-.about .text p {
+.about .card p {
   font-size: 18px;
   color: #555;
   line-height: 1.8;
@@ -150,8 +153,26 @@ body {
 .about .image-wrapper img {
   max-width: 100%;
   border-radius: 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Effet au survol */
+.about .image-wrapper img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .about .image-wrapper img {
+    height: auto;
+    max-height: 300px;
+  }
+}
+
 
 .about .image-wrapper:hover img {
   transform: scale(1.05);
@@ -159,7 +180,7 @@ body {
 
 .about .image-wrapper .bannermaire {
   position: absolute;
-  bottom: -20px;
+  bottom: 10px; /* Remontée de la bande */
   left: 50%;
   transform: translateX(-50%);
   background-color: #32bde8;
@@ -170,10 +191,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: 'Poppins', sans-serif;
 }
-.service-card-link {
-  text-decoration: none; /* Supprime la décoration du lien */
-  color: inherit; /* Hérite de la couleur du texte de la carte */
-}
+
+
 .bannermaire h3 {
   font-size: 16px;
   margin: 0;
@@ -238,7 +257,6 @@ body {
   font-size: 1.5rem;
   margin-right: 0.75rem;
 }
-
   
   /* Media Queries for Responsiveness */
   @media (max-width: 767px) {
