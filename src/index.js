@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css";  
 import "slick-carousel/slick/slick-theme.css";  
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,3 +19,8 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+AOS.init({
+  duration: 1000,
+  once: true, // It will trigger only once when the element enters the viewport
+});

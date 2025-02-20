@@ -1,11 +1,12 @@
-/* Styles généraux */
+/* General Styles */
 .historique-page {
   font-family: "Poppins", sans-serif;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Section Hero */
+/* Hero Section */
 .hero-historique {
   background-image: url("/src/assets/images/thiaroyehistory.jpeg");
   background-size: cover;
@@ -13,35 +14,62 @@
   background-repeat: no-repeat;
   height: 60vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */
   position: relative;
   color: white;
   text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.hero-historique:hover {
+  background-position: top center;
 }
 
 .hero-overlay {
   background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 8px;
   width: 100%;
   height: 60vh;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Stacks the elements vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
 }
 
 .hero-historique h1 {
   font-size: 48px;
   margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
 }
 
 .hero-historique p {
   font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
+  animation: fadeIn 2s ease-out;
 }
 
-/* Section Contenu */
+/* FadeIn Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Content Section */
 .content-section {
   padding: 50px 20px;
   background: #f9f9f9;
+  animation: fadeInUp 1s ease-out;
 }
 
 .container {
@@ -49,10 +77,16 @@
   margin: 0 auto;
 }
 
+/* Section Items */
 .section-item {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.section-item:hover {
+  transform: scale(1.05);
 }
 
 .section-item.reverse {
@@ -61,8 +95,13 @@
 
 .section-image {
   width: 50%;
-  border-radius: 8px;
+  border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.1);
 }
 
 .section-text {
@@ -73,45 +112,16 @@
 .section-text h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #007bff;
+  color: #32bde8;
 }
 
-.section-text p,
-.section-text ul {
+.section-text p {
   font-size: 18px;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #555;
 }
 
-.section-text ul li {
-  margin-bottom: 10px;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .hero-historique h1 {
-    font-size: 32px;
-  }
-
-  .section-item {
-    flex-direction: column;
-  }
-
-  .section-image,
-  .section-text {
-    width: 100%;
-  }
-}
-
-
-.accordion {
-  list-style: none;
-  padding: 0;
-}
-
-.accordion li {
-  margin-bottom: 1rem;
-}
-
+/* Accordion Styles */
 .accordion-button {
   background: #f5f5f5;
   border: 1px solid #ddd;
@@ -131,46 +141,144 @@
 .accordion-content {
   padding: 0.5rem 1rem;
   border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  margin-top: -1px;
   background: #fafafa;
   font-size: 0.9rem;
 }
-/* Ajouts pour les nouvelles sections */
-.section-item.reverse .section-text {
-  padding-left: 0;
-  padding-right: 20px;
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.section-item.reverse .section-image {
-  margin-left: 20px;
-  margin-right: 0;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Style pour les images */
-.section-image {
-  width: 50%;
+@media (max-width: 768px) {
+  .hero-historique h1 {
+    font-size: 32px;
+  }
+
+  .section-item {
+    flex-direction: column;
+  }
+
+  .section-image,
+  .section-text {
+    width: 100%;
+  }
+}
+
+
+/* Section 2 : Événements Historiques */
+.section-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
-.section-image:hover {
-  transform: scale(1.05);
+.section-item.reverse {
+  flex-direction: row-reverse;
 }
 
-/* Style pour les titres */
-.section-text h2 {
+
+
+.section-text {
+  max-width: 45%;
+}
+
+h2 {
   font-size: 32px;
+  font-weight: 600;
+  color: #333;
   margin-bottom: 20px;
-  color: #007bff;
-  text-transform: uppercase;
 }
 
-/* Style pour les paragraphes */
-.section-text p {
+.accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
   font-size: 18px;
-  line-height: 1.8;
-  color: #555;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.accordion-button.active {
+  background-color: #0056b3;
+}
+
+.accordion-button:hover {
+  background-color: #0056b3;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion-button.active + .accordion-content {
+  display: block;
+  max-height: 200px;
+}
+
+/* For fluid transitions */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 15px;
+}
+
+.accordion-button.active + .accordion-content {
+  max-height: 500px;
+  opacity: 1;
+  padding: 15px;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* For smoother text content transition */
+.accordion-content p {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Optional - For a nice shadow effect on button click */
+.accordion-button:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
