@@ -31,7 +31,11 @@ import BulletinDeces from "./components/BulletinDeces/BulletinDeces";
 import CertificatMariage from "./components/CertificatMariage/CertificatMariage";
 import CertificatDivorce from "./components/CertificatDivorce/CertificatDivorce";
 
+import Connexion from "./components/authentication/connexion/Connexion";
+import BoiteAIdee from "./components/boite-a-idee/BoiteAIdee";
 
+import BureauDesMarchesPublics from './components/BureauDesMarchesPublics/BureauDesMarchesPublics';
+import BureauDeDeveloppementLocal from './components/BureauDeDeveloppementLocal/BureauDeDeveloppementLocal';
 function App() {
   return (
     <Router>
@@ -64,6 +68,15 @@ function App() {
           <Route path="/certificat-divorce" element={<CertificatDivorce />} />
 
           <Route path="/actualite" element={<Actualite />} /> 
+
+          <Route path="/connexion" element={<Connexion />} />
+
+          <Route path="/boite-a-idees" element={<BoiteAIdee />} />
+          
+          <Route path="/marche-public" element={<BureauDesMarchesPublics/>} />
+
+          <Route path="/bureau-developpement-local" element={<BureauDeDeveloppementLocal/>} />
+
 
         </Routes>
       </div>

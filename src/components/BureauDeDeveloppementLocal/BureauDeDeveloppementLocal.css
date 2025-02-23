@@ -1,0 +1,43 @@
+.bdl-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limite la largeur */
+    margin: 0 auto; /* Centre le container */
+    text-align: left; /* Aligne le texte à gauche */
+    word-wrap: break-word; /* Permet au texte long de se couper */
+    overflow-wrap: break-word; /* Gère les mots longs qui pourraient déborder */
+}
+
+.bdl-container h1 {
+    font-size: 2rem;
+    color: #32bde8;
+    margin-bottom: 20px;
+}
+
+.bdl-container p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.bdl-container ul {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 20px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bdl-container li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+}
+
+.bdl-container li svg {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+    color: #32bde8;
+    flex-shrink: 0; /* Empêche l'icône de se rétrécir */
+}

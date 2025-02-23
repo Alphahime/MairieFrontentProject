@@ -1,10 +1,21 @@
-/* Supprimer les marges par défaut */
-body, h1, h2, p {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+/* ServiceTechnique.css */
+
+/* Appliquer un espacement et une couleur pour les titres */
+.axe h2 {
+  font-size: 1rem;
+  color: #32bde8;
+  margin: 20px 0 10px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
 }
 
+/* Ajouter un peu d'espace entre l'icône et le texte */
+.axe h2 svg {
+  margin-right: 10px;
+}
+
+/* Appliquer les autres styles existants */
 .service-technique {
   display: flex;
   flex-direction: column;
@@ -56,13 +67,6 @@ body, h1, h2, p {
   height: 200px;
   background-size: cover;
   background-position: center;
-}
-
-.axe h2 {
-  font-size: 1.5rem;
-  color: #32bde8;
-  margin: 20px 0 10px;
-  padding: 0 20px;
 }
 
 .axe p {

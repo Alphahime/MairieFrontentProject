@@ -14,32 +14,76 @@ const Header = () => {
           <div className="logo"></div>
           <nav id="navmenu" className="navmenu">
             <ul>
-            <li>
-            <Link to="/" className="active">Accueil</Link>
-           </li>
-              <li className="dropdown">
-                <a href="#about">Municipalité <i className="bi bi-chevron-down"></i></a>
+        
+
+             
+           <li className="dropdown">
+                <Link to="/" className="active">Accueil</Link>
                 <ul className="dropdown-menu">
                 <li>
-                <Link to="/Historique">Historique de la mairie</Link>
-                </li>
-                <li>
-               <Link to="/service-technique">Service Technique</Link>
-               </li>
-               <li>
-               <Link to="/service-social">Service Social</Link>
-               </li>
-                <li>
-                <Link to="/Historique">Service Finance</Link>
-                </li><li><li>
-                <Link to="/Historique">Service Etat Civil</Link>
-                </li>
-                <Link to="/Historique">Secrétariat Municipal</Link>
-                </li>
+                  
+                <li><a href="#services-side">Services en ligne</a></li>
+                  
+                  </li>
                 </ul>
               </li>
+
+
+
+           <li className="dropdown">
+  <a href="#about">Municipalité <i className="bi bi-chevron-down"></i></a>
+  <ul className="dropdown-menu">
+                
+                <li>   
+                <Link to="/conseil municipal">Conseil municipal</Link>
+                </li>
+    {/* Conseil Municipal */}
+    <li className="dropdown">
+      <a href="#conseil-municipal">Exécutif Municipal <i className="bi bi-chevron-right"></i></a>
+      <ul className="dropdown-menu">
+        <li><Link to="/maire-adjoint">Maire et Adjoints</Link></li>
+      </ul>
+    </li>
+   
+                <li>   
+                <Link to="/Historique">Cabinet du Maire</Link>
+                </li>
+    {/* Administration */}
+    <li className="dropdown">
+      <a href="#administration">Administration <i className="bi bi-chevron-right"></i></a>
+      <ul className="dropdown-menu">
+        <li><Link to="/secretariat-municipal">Secrétariat Municipal</Link></li>
+        <li><Link to="/dagf">DAGF</Link></li>
+        <li><Link to="/service-etat-civil">État Civil</Link></li>
+        <li><Link to="/service-technique">Service Technique</Link></li>
+        <li><Link to="/marche-public">Bureau des Marchés Publics</Link></li>
+        <li><Link to="/bureau-developpement-local">Bureau de développement Local</Link></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+
+
+              <li className="dropdown">
+                <a href="#about">Documentation <i className="bi bi-chevron-down"></i></a>
+                <ul className="dropdown-menu">
+                <li>
+                  
+                <Link to="/Historique">PDC</Link>
+                </li>
+                <li>
+                  
+                  <Link to="/Historique">Délibération</Link>
+                  </li>
+                </ul>
+              </li>
+
+
               <li><Link to="/agenda">Les projets</Link></li>
-              <li><a href="#services-side">Services en ligne</a></li>
+                 <li>   
+                <Link to="/Historique">Historique</Link>
+                </li>
               <li className="dropdown">
                 <a href="#">Actualités <i className="bi bi-chevron-down"></i></a>
                 <ul className="dropdown-menu">

@@ -1,0 +1,78 @@
+.etat-civil-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-etat-civil {
+    text-align: center;
+    background-color: #32bde8;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header-etat-civil h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-etat-civil svg {
+    margin-right: 10px;
+}
+
+.content-etat-civil {
+    padding: 15px;
+}
+
+.section-etat-civil {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-etat-civil h2 {
+    color: #32bde8;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.section-etat-civil h2 svg {
+    margin-right: 8px;
+    color: #32bde8;
+    font-size: 1.6rem;
+}
+
+.section-etat-civil p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.section-etat-civil ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-etat-civil ul li {
+    font-size: 1rem;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.section-etat-civil ul li::before {
+    content: "✅";
+    margin-right: 8px;
+    color: #32bde8;
+    font-size: 1.2rem;
+}
