@@ -265,8 +265,8 @@ const Home = () => {
       />
           </div>
           <div className="personnalite-info">
-            <h3 className="personnalite-name">Personnalité 2</h3>
-            <p className="personnalite-role">Rôle de la Personnalité 2</p>
+            <h3 className="personnalite-name">Moustapha SARR </h3>
+            <p className="personnalite-role">1er adjoint en charge de l'administration générale et des finances</p>
             <div className="personnalite-contact">
               <div className="contact-icon">
                 <FaPhoneAlt className="phone-icon" />
@@ -305,8 +305,9 @@ const Home = () => {
       />
           </div>
           <div className="personnalite-info">
-            <h3 className="personnalite-name">Personnalité 2</h3>
-            <p className="personnalite-role">Rôle de la Personnalité 3</p>
+            <h3 className="personnalite-name">Yayi Bayam DIOUF</h3>
+            <p className="personnalite-role"> 2ème adjointe en charge du développement économique, de la promotion de la femme et de la petite enfance
+            </p>
             <div className="personnalite-contact">
               <div className="contact-icon">
                 <FaPhoneAlt className="phone-icon" />
@@ -345,8 +346,9 @@ const Home = () => {
       />
           </div>
           <div className="personnalite-info">
-            <h3 className="personnalite-name">Personnalité 4</h3>
-            <p className="personnalite-role">Rôle de la Personnalité 2</p>
+            <h3 className="personnalite-name">Abdou Aziz GUEYE </h3>
+            <p className="personnalite-role">3ème adjoint en charge de la coopération et des partenariats
+            </p>
             <div className="personnalite-contact">
               <div className="contact-icon">
                 <FaPhoneAlt className="phone-icon" />

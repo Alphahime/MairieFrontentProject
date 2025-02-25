@@ -36,6 +36,17 @@ import BoiteAIdee from "./components/boite-a-idee/BoiteAIdee";
 
 import BureauDesMarchesPublics from './components/BureauDesMarchesPublics/BureauDesMarchesPublics';
 import BureauDeDeveloppementLocal from './components/BureauDeDeveloppementLocal/BureauDeDeveloppementLocal';
+
+import DAGF from './components/DAGF/DAGF';
+import CabinetDuMaire from "./components/CabinetDuMaire/CabinetDuMaire";
+import ConseilMunicipal from "./components/ConseilMunicipal/ConseilMunicipal"; 
+
+import MaireEtAdjoints from "./components/MaireEtAdjoints/MaireEtAdjoints";
+
+import PDC from "./components/PDC/PDC"; 
+
+import Deliberation from "./components/Deliberation/Deliberation";
+
 function App() {
   return (
     <Router>
@@ -77,6 +88,16 @@ function App() {
 
           <Route path="/bureau-developpement-local" element={<BureauDeDeveloppementLocal/>} />
 
+          <Route path="/dagf" element={<DAGF />} />
+          <Route path="/cabinet-du-maire" element={<CabinetDuMaire />} /> 
+
+          <Route path="/conseil-municipal" element={<ConseilMunicipal />} />
+
+          <Route path="/maire-adjoint" element={<MaireEtAdjoints />} />
+
+          <Route path="/pdc" element={<PDC />} />
+
+          <Route path="/deliberation" element={<Deliberation />} />
 
         </Routes>
       </div>

@@ -1,116 +1,70 @@
-/* ServiceTechnique.css */
-
-/* Appliquer un espacement et une couleur pour les titres */
-.axe h2 {
-  font-size: 1rem;
-  color: #32bde8;
-  margin: 20px 0 10px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-}
-
-/* Ajouter un peu d'espace entre l'icône et le texte */
-.axe h2 svg {
-  margin-right: 10px;
-}
-
-/* Appliquer les autres styles existants */
-.service-technique {
+.service-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  min-height: 100vh;
 }
 
-.main-content {
+.service-technique {
+  flex: 1;
   width: 100%;
-  max-width: 1200px;
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
 }
 
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .main-content h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: #000000;
   margin-bottom: 20px;
-  color: #333;
 }
 
 .main-content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #555;
+  line-height: 1.6;
   margin-bottom: 40px;
 }
 
 .services-axes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .axe {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px; /* Taille réduite */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .axe:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
-.axe-image {
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
+.iconaxe {
+  font-size: 1.5rem; /* Taille réduite */
+  color: #32bde8; /* Couleur des icônes */
+  margin-bottom: 10px;
+}
+
+.axe h2 {
+  font-size: 1rem; /* Taille réduite */
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .axe p {
-  font-size: 1rem;
-  color: #666;
-  padding: 0 20px 20px;
-}
-
-.banner {
-  width: 100%;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-}
-
-.banner-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 20px;
-}
-
-.banner-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.banner-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 0.8rem; /* Taille réduite */
+  color: #555;
+  line-height: 1.4;
 }

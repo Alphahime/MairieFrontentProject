@@ -35,7 +35,7 @@ const Header = () => {
   <ul className="dropdown-menu">
                 
                 <li>   
-                <Link to="/conseil municipal">Conseil municipal</Link>
+                <Link to="/conseil-municipal">Conseil municipal</Link>
                 </li>
     {/* Conseil Municipal */}
     <li className="dropdown">
@@ -46,7 +46,7 @@ const Header = () => {
     </li>
    
                 <li>   
-                <Link to="/Historique">Cabinet du Maire</Link>
+                <Link to="/cabinet-du-maire">Cabinet du Maire</Link>
                 </li>
     {/* Administration */}
     <li className="dropdown">
@@ -70,11 +70,11 @@ const Header = () => {
                 <ul className="dropdown-menu">
                 <li>
                   
-                <Link to="/Historique">PDC</Link>
+                <Link to="/pdc">PDC</Link>
                 </li>
                 <li>
                   
-                  <Link to="/Historique">Délibération</Link>
+                  <Link to="/deliberation">Délibération</Link>
                   </li>
                 </ul>
               </li>

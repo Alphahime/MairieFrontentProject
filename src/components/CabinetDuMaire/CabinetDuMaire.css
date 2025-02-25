@@ -1,0 +1,147 @@
+.bigcontentcab {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .cabinet-container {
+    flex: 1;
+    width: 100%;
+    background-color: #f9f9f9;
+  }
+  
+  .cabinet-banner {
+    width: 100%;
+    height: 400px; /* Hauteur augmentée pour mieux afficher l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .banner-overlaycab {
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent plus sombre */
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    max-width: 800px;
+    width: 90%;
+  }
+  
+  .banner-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .banner-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  .cabinet-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .cabinet-intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .cabinet-intro h2 {
+    font-size: 2rem;
+    color: #32bde8;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .cabinet-intro p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cabinet-missions {
+    margin-top: 40px;
+  }
+  
+  .cabinet-missions h2 {
+    font-size: 2rem;
+    color: #32bde8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .mission-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .mission-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .mission-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .mission-icon {
+    font-size: 2rem;
+    color: #32bde8;
+    margin-bottom: 15px;
+  }
+  
+  .mission-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .mission-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cabinet-banner {
+      height: 300px; /* Hauteur réduite pour les petits écrans */
+    }
+  
+    .banner-overlay h1 {
+      font-size: 2rem;
+    }
+  
+    .banner-overlay p {
+      font-size: 1rem;
+    }
+  
+    .mission-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .mission-card {
+      width: 100%;
+    }
+  }

@@ -1,0 +1,105 @@
+.bigcontent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .conseil-container {
+    flex: 1;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .conseil-section,
+  .executif-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .conseil-section h1,
+  .executif-section h2 {
+    font-size: 2rem;
+    color: #32bde8;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .conseil-section p,
+  .executif-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .membres-conseil {
+    margin-top: 20px;
+  }
+  
+  .membres-conseil h2 {
+    font-size: 1.5rem;
+    color: #32bde8;
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #32bde8;
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .bureau-municipal {
+    margin-top: 20px;
+  }
+  
+  .bureau-municipal h3 {
+    font-size: 1.5rem;
+    color: #32bde8;
+    margin-bottom: 15px;
+  }
+  
+  .bureau-municipal ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bureau-municipal ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .conseil-section h1,
+    .executif-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    table th,
+    table td {
+      padding: 8px;
+    }
+  }

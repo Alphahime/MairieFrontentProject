@@ -1,78 +1,106 @@
-.etat-civil-container {
+.bigcontent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .etat-civil-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header-etat-civil {
+    flex: 1;
+  }
+  
+  .header-etat-civil {
     text-align: center;
     background-color: #32bde8;
     color: white;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
-}
-
-.header-etat-civil h1 {
+  }
+  
+  .header-etat-civil h1 {
     margin: 0;
     font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.header-etat-civil svg {
+  }
+  
+  .header-etat-civil svg {
     margin-right: 10px;
-}
-
-.content-etat-civil {
-    padding: 15px;
-}
-
-.section-etat-civil {
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.section-etat-civil h2 {
-    color: #32bde8;
-    font-size: 1.4rem;
+  }
+  
+  .content-etat-civil {
     display: flex;
-    align-items: center;
-}
-
-.section-etat-civil h2 svg {
-    margin-right: 8px;
-    color: #32bde8;
-    font-size: 1.6rem;
-}
-
-.section-etat-civil p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.section-etat-civil ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .card-etat-civil {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px; /* Taille réduite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card-etat-civil:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon-etat-civil {
+    font-size: 1.5rem; /* Taille réduite */
+    color: #32bde8; /* Couleur des icônes */
+    margin-bottom: 10px;
+  }
+  
+  .card-etat-civil h2 {
+    font-size: 1rem; /* Taille réduite */
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .card-etat-civil p {
+    font-size: 0.8rem; /* Taille réduite */
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .card-etat-civil ul {
     list-style: none;
     padding: 0;
-}
-
-.section-etat-civil ul li {
-    font-size: 1rem;
+  }
+  
+  .card-etat-civil ul li {
+    font-size: 0.8rem;
     padding: 5px 0;
     display: flex;
     align-items: center;
-}
-
-.section-etat-civil ul li::before {
+  }
+  
+  .card-etat-civil ul li::before {
     content: "✅";
     margin-right: 8px;
     color: #32bde8;
-    font-size: 1.2rem;
-}
+    font-size: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content-etat-civil {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-etat-civil {
+      width: 100%;
+    }
+  }
