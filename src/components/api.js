@@ -64,3 +64,141 @@ export const submitBoiteIdee = async (titre, description, email, statut) => {
         throw error;
     }
 };
+
+
+// Fonction pour récupérer tous les projets
+export const getProjets = async () => {
+    try {
+        const response = await fetch(`${API_URL}/projets`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching projects:", error);
+        throw error;
+    }
+};
+
+// Fonction pour récupérer les actualités
+export const getActualites = async () => {
+    try {
+        const response = await fetch(`${API_URL}/actualites`);
+        if (!response.ok) {
+            throw new Error("Erreur lors de la récupération des actualités");
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la récupération des actualités:", error);
+        throw error;
+    }
+};
+
+
+
+// Fonction pour récupérer tous les documents
+export const getDocuments = async () => {
+    try {
+        const response = await fetch(`${API_URL}/documents`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching documents:", error);
+        throw error;
+    }
+};
+
+// Fonction pour créer un nouveau document
+export const createDocument = async (numeroDeActe, anneeDeNaissance) => {
+    try {
+        const response = await fetch(`${API_URL}/documents`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                numero_de_acte: numeroDeActe,
+                annee_de_naissance: anneeDeNaissance,
+            }),
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error creating document:", error);
+        throw error;
+    }
+};
+
+// Fonction pour mettre à jour un document
+export const updateDocument = async (id, numeroDeActe, anneeDeNaissance) => {
+    try {
+        const response = await fetch(`${API_URL}/documents/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                numero_de_acte: numeroDeActe,
+                annee_de_naissance: anneeDeNaissance,
+            }),
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error updating document:", error);
+        throw error;
+    }
+};
+
+// Fonction pour supprimer un document
+export const deleteDocument = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/documents/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error deleting document:", error);
+        throw error;
+    }
+};
+
+// Exportez toutes les fonctions
+export { API_URL};
+
+
+
+// Récupérer tous les rendez-vous
+export const getRendezVous = async () => {
+    try {
+        const response = await fetch(`${API_URL}/rendez-vous`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la récupération des rendez-vous :", error);
+        throw error;
+    }
+};
+
+// prise de un nouveau rendez-vous
+export const createRendezVous = async (rendezVousData) => {
+    try {
+        const response = await fetch(`${API_URL}/rendez-vous`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(rendezVousData),
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la création du rendez-vous :", error);
+        throw error;
+    }
+};

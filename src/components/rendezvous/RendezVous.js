@@ -1,76 +1,147 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import './Rendezvous.css';
+import { createRendezVous } from "../api";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+const RendezVous = () => {
+    const [formData, setFormData] = useState({
+        nom_utilisateur: "",
+        email: "",
+        telephone: "",
+        service: "",
+        date_rendez_vous: "",
+        motif: "",
+        statut: "En attente",
+    });
 
-function RendezVous() {
-  const [formData, setFormData] = useState({
-    nom: '',
-    prenom: '',
-    email: '',
-    telephone: '',
-    date: '',
-    heure: '',
-    motif: '',
-  });
+    // Gérer les changements dans le formulaire
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    // Soumettre le formulaire
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Rendez-vous enregistré avec succès !');
-    console.log(formData);
-  };
+        // Convertir la date pour respecter le format attendu par Laravel
+    const formattedDate = formData.date_rendez_vous
+    ? formData.date_rendez_vous.replace("T", " ") + ":00"
+    : "";
 
-  return (
-    <div className="rendezvous-container">
-      <Header />
-      <div className="banner-rendezvous">Prendre un Rendez-vous</div>
 
-      <form className="rendezvous-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Nom :</label>
-          <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
+        try {
+            await createRendezVous(formData);
+            alert("Rendez-vous ajouté avec succès !");
+            setFormData({
+                nom_utilisateur: "",
+                email: "",
+                telephone: "",
+                service: "",
+                date_rendez_vous: "",
+                motif: "",
+                statut: "En attente",
+            });
+        } catch (error) {
+            console.error("Erreur :", error);
+            alert("Erreur lors de l'ajout du rendez-vous.");
+        }
+    };
+
+    return (
+
+      <div className="bigcontainrv">
+         <Header />
+
+         <div className="banniere">
+         <h1>Prendre un rendez-vous</h1>
+           
+          </div>
+        <div className="rendez-vous-container">
+         
+           
+
+            {/* Formulaire d'ajout de rendez-vous */}
+            <form onSubmit={handleSubmit} className="rendez-vous-form">
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Nom :</label>
+                        <input
+                            type="text"
+                            name="nom_utilisateur"
+                            value={formData.nom_utilisateur}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Email :</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Téléphone :</label>
+                        <input
+                            type="text"
+                            name="telephone"
+                            value={formData.telephone}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Service :</label>
+                        <input
+                            type="text"
+                            name="service"
+                            value={formData.service}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Date et heure :</label>
+                        <input
+                            type="datetime-local"
+                            name="date_rendez_vous"
+                            value={formData.date_rendez_vous}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Motif :</label>
+                        <textarea
+                            name="motif"
+                            value={formData.motif}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                </div>
+
+                <button type="submit" className="submit-button">
+                    Soumettre
+                </button>
+            </form>
+           
         </div>
-
-        <div className="form-group">
-          <label>Prénom :</label>
-          <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
+        <Footer />
         </div>
-
-        <div className="form-group">
-          <label>Email :</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label>Téléphone :</label>
-          <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label>Date du rendez-vous :</label>
-          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label>Heure :</label>
-          <input type="time" name="heure" value={formData.heure} onChange={handleChange} required />
-        </div>
-
-        <div className="form-group">
-          <label>Motif du rendez-vous :</label>
-          <textarea name="motif" value={formData.motif} onChange={handleChange} required />
-        </div>
-
-        <button type="submit" className="submit-btn">Envoyer la demande</button>
-      </form>
-
-      <Footer />
-    </div>
-  );
-}
+    );
+};
 
 export default RendezVous;

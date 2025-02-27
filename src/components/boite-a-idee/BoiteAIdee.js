@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./BoiteAIdee.css";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -9,20 +9,19 @@ const BoiteAIdee = () => {
     const [description, setDescription] = useState("");
     const [email, setEmail] = useState("");
     const [statut, setStatut] = useState("en attente");
-    const [confirmationMessage, setConfirmationMessage] = useState(""); // State for the confirmation message
+    const [confirmationMessage, setConfirmationMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // Fonction de soumission de l'idée
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             setLoading(true);
-            const nouvelleIdee = await submitBoiteIdee(titre, description, email, statut);
+            await submitBoiteIdee(titre, description, email, statut);
             setConfirmationMessage("Votre idée a été envoyée avec succès!");
             setLoading(false);
 
-            // Réinitialisation des champs du formulaire
+            // Réinitialisation des champs
             setTitre("");
             setDescription("");
             setEmail("");
@@ -35,13 +34,14 @@ const BoiteAIdee = () => {
     };
 
     return (
-        <div className="boite-idee-container">
+        <div className="bigcontent">
               <Header />
-              {/* Bannière sous le header */}
+        <div className="boite-idee-container">
+          
             <div className="banniere">
                 <h1>Boîte à idées</h1>
+                <p>Partagez vos idées pour améliorer notre service !</p>
             </div>
-
 
             {confirmationMessage && (
                 <div className="confirmation-message">
@@ -50,37 +50,47 @@ const BoiteAIdee = () => {
             )}
 
             <form onSubmit={handleSubmit} className="boite-idee-form">
-                <div className="input-group">
+                <div className="form-group">
+                    <label htmlFor="titre">Titre de l'idée</label>
                     <input
                         type="text"
-                        placeholder="Titre de l'idée"
+                        id="titre"
+                        placeholder="Ex: Nouvelle fonctionnalité"
                         value={titre}
                         onChange={(e) => setTitre(e.target.value)}
                         required
                     />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="description">Description de l'idée</label>
                     <textarea
-                        placeholder="Description de l'idée"
+                        id="description"
+                        placeholder="Décrivez votre idée en quelques mots..."
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         required
                     ></textarea>
                 </div>
 
-                <div className="input-group">
+                <div className="form-group">
+                    <label htmlFor="email">Email (facultatif)</label>
                     <input
                         type="email"
-                        placeholder="Email (facultatif)"
+                        id="email"
+                        placeholder="Ex: votremail@exemple.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-       
                 </div>
 
-                <button type="submit" disabled={loading} className="bouttonidea">
+                <button type="submit" disabled={loading} className="submit-button">
                     {loading ? "Envoi en cours..." : "Soumettre"}
                 </button>
             </form>
-            <Footer />
+         
+        </div>
+        <Footer />
         </div>
     );
 };

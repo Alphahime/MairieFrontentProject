@@ -1,94 +1,95 @@
-import React, { useState } from 'react';
-import './ActeNaissance.css';
+import React, { useState } from "react";
+import "./ActeNaissance.css";
+import { API_URL } from "../api";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+const ActeNaissance = () => {
+    // États pour gérer les champs du formulaire
+    const [numeroDeActe, setNumeroDeActe] = useState("");
+    const [anneeDeNaissance, setAnneeDeNaissance] = useState("");
+    const [message, setMessage] = useState("");
 
-function ActeNaissance() {
-  const [formData, setFormData] = useState({
-    nom: '',
-    prenom: '',
-    dateNaissance: '',
-    lieuNaissance: '',
-    nomPere: '',
-    nomMere: '',
-    email: '',
-    telephone: '',
-    adresse: '',
-  });
+    // Fonction pour gérer la soumission du formulaire
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+        // Vérifier que les champs ne sont pas vides
+        if (!numeroDeActe || !anneeDeNaissance) {
+            setMessage("Veuillez remplir tous les champs.");
+            return;
+        }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Formulaire soumis :', formData);
-    alert('Votre demande a été envoyée avec succès !');
-  };
+        try {
+            // Envoyer les données à l'API
+            const response = await fetch(`${API_URL}/documents`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    numero_de_acte: numeroDeActe,
+                    annee_de_naissance: anneeDeNaissance,
+                }),
+            });
 
-  return (
-   
-    <div className="acte-naissance">
+            if (response.ok) {
+                const data = await response.json();
+                setMessage("Document ajouté avec succès !");
+                setNumeroDeActe(""); // Réinitialiser le champ
+                setAnneeDeNaissance(""); // Réinitialiser le champ
+            } else {
+                const errorData = await response.json();
+                setMessage(`Erreur : ${errorData.message || "Une erreur s'est produite."}`);
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'envoi des données :", error);
+            setMessage("Une erreur s'est produite lors de l'envoi des données.");
+        }
+    };
+
+    return (
+
+      <div className="bigcontainacte">
           <Header />
-          <div className="bannerform">
-         Demande d'Acte de Naissance
-       </div>
-    
-      <div className="form-container">
-        <h1>Demande d'acte de naissance</h1>
-        <p>Veuillez remplir le formulaire ci-dessous pour faire votre demande.</p>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Nom :</label>
-            <input type="text" name="nom" value={formData.nom} onChange={handleChange} required />
-          </div>
 
-          <div className="form-group">
-            <label>Prénom :</label>
-            <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Date de naissance :</label>
-            <input type="date" name="dateNaissance" value={formData.dateNaissance} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Lieu de naissance :</label>
-            <input type="text" name="lieuNaissance" value={formData.lieuNaissance} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Nom du père :</label>
-            <input type="text" name="nomPere" value={formData.nomPere} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Nom de la mère :</label>
-            <input type="text" name="nomMere" value={formData.nomMere} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Email :</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Téléphone :</label>
-            <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required />
-          </div>
-
-          <div className="form-group">
-            <label>Adresse :</label>
-            <textarea name="adresse" value={formData.adresse} onChange={handleChange} required></textarea>
-          </div>
-
-          <button type="submit">Envoyer la demande</button>
-        </form>
-      </div>
-      <Footer />
-    </div>
-  );
-}
+          <div className="banniere">
+          <h2>Formulaire de demande</h2>
+                <p>Recevez vos documents administratif en moins de 24h !</p>
+            </div>
+        <div className="acte-naissance-container">
+         
+           
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="numeroDeActe">Numéro de l'acte :</label>
+                    <input
+                        type="text"
+                        id="numeroDeActe"
+                        value={numeroDeActe}
+                        onChange={(e) => setNumeroDeActe(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="anneeDeNaissance">Année de naissance :</label>
+                    <input
+                        type="number"
+                        id="anneeDeNaissance"
+                        value={anneeDeNaissance}
+                        onChange={(e) => setAnneeDeNaissance(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit" className="submit-button">
+                    Ajouter
+                </button>
+            </form>
+            {message && <p className="message">{message}</p>}
+          
+        </div>
+        <Footer />
+        </div>
+    );
+};
 
 export default ActeNaissance;

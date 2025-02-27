@@ -425,15 +425,28 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
-  background-color: #f1f1f1; 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+  position: relative;
+  color: white; /* Texte en blanc pour contraster avec le fond sombre */
 }
 
+.quick-services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Superposition noire semi-transparente */
+  z-index: 1;
+}
 
-
+.text-side, .services-side {
+  position: relative;
+  z-index: 2;
+}
 
 .text-side {
   flex: 1;
@@ -443,15 +456,23 @@ body {
   justify-content: center;
 }
 
-.section-title {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+.cards {
+  background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Effet de flou pour le verre */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.section-description {
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.small-desc {
   font-size: 1rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
 }
 
@@ -461,64 +482,50 @@ body {
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Grid dynamique */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;  /* Réduit le padding */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  max-width: 180px;  /* Réduit la taille des cartes */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+ 
 }
 
 .service-card:hover {
-  transform: translateY(-5px);  /* Légère animation au survol */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
-  width: 20px;
+  width: 40px;
   height: 40px;
-  
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .service-title {
-  font-size: 1rem;  /* Réduit la taille du titre */
-  color: #333;
+  font-size: 1rem;
+  color: white;
   margin-bottom: 0.8rem;
 }
 
-.view-all-container {
-  text-align: center;
-  margin-top: 2rem;
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-.view-all-link {
-  font-size: 1.2rem;
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.view-all-link:hover {
-  text-decoration: underline;
-}
-
-.personnalites-section {
-  padding: 3rem;
-  background-color: #f9f9f9;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
+.go-arrow {
+  font-size: 1.5rem;
+  color: white;
 }
 
 .personnalites-container {

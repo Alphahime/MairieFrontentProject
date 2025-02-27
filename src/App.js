@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Import des composants
 import Home from "./components/home/Home";
 import Blog from "./components/blog/Blog";
-import Administrateur from "./components/administrateur/Administrateur";
+// import Administrateur from "./components/administrateur/Administrateur";
 import Evenement from "./components/evenement/Evenement";
 import RendezVous from "./components/rendezvous/RendezVous";
 
 import Actualite from './components/actualite/Actualite'; 
+import DetailsActualite from "./components/details-actualites/DetailsActualite";
 
 import Historique from "./components/historique/Historique";
 import Agenda from "./components/agenda/Agenda";
@@ -47,6 +48,14 @@ import PDC from "./components/PDC/PDC";
 
 import Deliberation from "./components/Deliberation/Deliberation";
 
+import HomeAdmin from "./components/administrateur/home-admin/HomeAdmin";
+import GestionRendezVous from "./components/administrateur/gestion-rendez-vous/GestionRendezVous";
+// import BoiteAIdee from "./components/administrateur/boite-a-idee/BoiteAIdee";
+import Actualites from "./components/administrateur/actualites/Actualites";
+import Projets from "./components/administrateur/projets/Projets";
+import DemandeDocuments from "./components/administrateur/demande-documents/DemandeDocuments";
+
+
 function App() {
   return (
     <Router>
@@ -54,7 +63,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/administrateur" element={<Administrateur />} />
+          {/* <Route path="/administrateur" element={<Administrateur />} /> */}
           <Route path="/evenement" element={<Evenement />} />
           <Route path="/rendezvous" element={<RendezVous />} />
           <Route path="/Historique" element={<Historique />} />
@@ -79,6 +88,7 @@ function App() {
           <Route path="/certificat-divorce" element={<CertificatDivorce />} />
 
           <Route path="/actualite" element={<Actualite />} /> 
+          <Route path="/actualites/:id" element={<DetailsActualite />} />
 
           <Route path="/connexion" element={<Connexion />} />
 
@@ -98,6 +108,17 @@ function App() {
           <Route path="/pdc" element={<PDC />} />
 
           <Route path="/deliberation" element={<Deliberation />} />
+
+
+          <Route path="/admin/gestion-rendez-vous" element={<GestionRendezVous />} />
+         {/* <Route path="/boite-a-idee" element={<BoiteAIdee />} /> */}
+         <Route path="/admin/actualites" element={<Actualites />} />
+        <Route path="/admin/projets" element={<Projets />} />
+        <Route path="/admin/demande-documents" element={<DemandeDocuments />} />
+
+        
+        {/* <Route path="home" element={<HomeAdmin />} /> */}
+        
 
         </Routes>
       </div>

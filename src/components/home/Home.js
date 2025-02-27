@@ -146,64 +146,78 @@ const Home = () => {
 
      
 
-<h2 className="section-title">Accès rapide aux services</h2>
-   <section id="quick-services" className="quick-services-section" style={{ backgroundImage: `url(${pecheImage})` }}>
-      <div className="text-side">
-        <div className="cards">
-          <p className="card-title">Services en ligne</p>
-          <p className="small-desc">
-            Découvrez les services en ligne proposés par votre mairie pour simplifier vos démarches administratives.
-            Accédez à des services tels que la demande de certificats, l'inscription aux événements municipaux,
-            la prise de rendez-vous avec les services de la mairie, et bien plus encore.
-          </p>
-          <div className="go-corner">
-            <div className="go-arrow">→</div>
-          </div>
-        </div>
+      <h2 className="section-title">Accès rapide aux services</h2>
+<section id="quick-services" className="quick-services-section" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${pecheImage})` }}>
+  <div className="text-side">
+    <div className="cards">
+      <p className="card-title">Services en ligne</p>
+      <p className="small-desc">
+        Découvrez les services en ligne proposés par votre mairie pour simplifier vos démarches administratives.
+        Accédez à des services tels que la demande de certificats, l'inscription aux événements municipaux,
+        la prise de rendez-vous avec les services de la mairie, et bien plus encore.
+      </p>
+      <div className="go-corner">
+        <div className="go-arrow">→</div>
       </div>
+    </div>
+  </div>
 
-      <div id="services-side" className="services-side">
-        <div className="services-container">
-        <Link to="/acte-naissance" className="service-card-link">
-         <div className="service-card">
-        <FaFileAlt className="service-icon" />
-        <h3 className="service-title">Demande d’acte de naissance</h3>
+  <div id="services-side" className="services-side">
+    <div className="services-container">
+      <Link to="/acte-naissance" className="service-card-link">
+        <div className="service-card">
+          <FaFileAlt className="service-icon" />
+          <h3 className="service-title">Demande d’acte de naissance</h3>
         </div>
       </Link>
 
-          <div className="service-card">
-            <FaClipboard className="service-icon" />
-            <h3 className="service-title">Consultation des projets municipaux</h3>
-          </div>
-          <Link to="/rendezvous" className="service-card-link"> {/* Lien vers la page de RendezVous */}
       <div className="service-card">
-        <FaCalendarAlt className="service-icon" />
-        <h3 className="service-title">Prendre un rendez-vous</h3>
+        <FaClipboard className="service-icon" />
+        <h3 className="service-title">Consultation des projets municipaux</h3>
       </div>
-    </Link>
-          <div className="service-card">
-            <FaBuilding className="service-icon" />
-            <h3 className="service-title">Demande de permis de construction</h3>
-          </div>
-          <div className="service-card">
-            <FaRegFileAlt className="service-icon" />
-            <h3 className="service-title">Extrait de naissance</h3>
-          </div>
-          <div className="service-card">
-            <FaRegCalendarAlt className="service-icon" />
-            <h3 className="service-title">Bulletin de décès</h3>
-          </div>
-          <div className="service-card">
-            <FaRegBuilding className="service-icon" />
-            <h3 className="service-title">Certificat de mariage</h3>
-          </div>
-          <div className="service-card">
-            <FaRegHandshake className="service-icon" />
-            <h3 className="service-title">Certificat de divorce</h3>
-          </div>
+
+      <Link to="/rendezvous" className="service-card-link">
+        <div className="service-card">
+          <FaCalendarAlt className="service-icon" />
+          <h3 className="service-title">Prendre un rendez-vous</h3>
         </div>
+      </Link>
+
+      <div className="service-card">
+        <FaBuilding className="service-icon" />
+        <h3 className="service-title">Demande de permis de construction</h3>
       </div>
-    </section>
+
+      <Link to="/acte-naissance" className="service-card-link">
+        <div className="service-card">
+          <FaRegFileAlt className="service-icon" />
+          <h3 className="service-title">Extrait de naissance</h3>
+        </div>
+      </Link>
+
+      <Link to="/acte-naissance" className="service-card-link">
+        <div className="service-card">
+          <FaRegCalendarAlt className="service-icon" />
+          <h3 className="service-title">Bulletin de décès</h3>
+        </div>
+      </Link>
+
+      <Link to="/acte-naissance" className="service-card-link">
+        <div className="service-card">
+          <FaRegBuilding className="service-icon" />
+          <h3 className="service-title">Certificat de mariage</h3>
+        </div>
+      </Link>
+
+      <Link to="/acte-naissance" className="service-card-link">
+        <div className="service-card">
+          <FaRegHandshake className="service-icon" />
+          <h3 className="service-title">Certificat de divorce</h3>
+        </div>
+      </Link>
+    </div>
+  </div>
+</section>
 
   
 <section id="personnalites-mairie" className="personnalites-section">

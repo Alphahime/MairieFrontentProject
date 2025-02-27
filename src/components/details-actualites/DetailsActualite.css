@@ -1,0 +1,52 @@
+/* DetailsActualite.css */
+
+.details-actualite-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.details-actualite-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.details-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.date-publication {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.categorie {
+    font-size: 14px;
+    color: #32bde8;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contenu {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.error {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}

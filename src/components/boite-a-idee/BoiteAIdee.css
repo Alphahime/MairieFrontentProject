@@ -1,102 +1,108 @@
-/* BoiteAIdee.css */
-
-/* Container for the entire component */
+/* Container principal */
 .boite-idee-container {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-}
-
-/* Title for the form */
-.boite-idee-container h2 {
-    font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-/* Confirmation message styling */
-.confirmation-message {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #32bde8;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-}
-
-/* Form styling */
-.boite-idee-form {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9fafb;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 30px; /* Ajout d'un padding global pour plus d'air */
-
+    align-items: center;
 }
 
-/* Grouping inputs into two columns */
-.input-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+/* Bannière */
+.banniere {
+    background: linear-gradient(to right, #000000, #22a0c7); 
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
 }
 
-.input-group input,
-.input-group textarea,
-.input-group select {
-    width: calc(50% - 7.5px); /* Two columns, with gap in between */
-    padding: 10px;
-    font-size: 16px;
+.banniere h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banniere p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+/* Message de confirmation */
+.confirmation-message {
+    background-color: #32bde8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Formulaire */
+.boite-idee-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border 0.3s ease;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group select:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     border-color: #32bde8;
     outline: none;
 }
 
-/* Submit button */
-.boite-idee-form .bouttonidea {
-    width: 20%;
-    height: 40px;
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Bouton de soumission */
+.submit-button {
+    width: 100%;
+    padding: 12px;
     background-color: #32bde8;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.boite-idee-form .bouttonidea:hover {
+.submit-button:hover {
     background-color: #2c3e50;
 }
 
-.boite-idee-form .bouttonidea:disabled {
+.submit-button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-}
-
-/* Style pour la bannière */
-.banniere {
-    background-color: #2c3e50;
-    width: 100%;
-    height: 200px;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banniere h1 {
-    font-size: 24px;
-    font-weight: bold;
 }

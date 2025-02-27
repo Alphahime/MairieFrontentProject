@@ -85,11 +85,11 @@ const Header = () => {
                 <Link to="/Historique">Historique</Link>
                 </li>
               <li className="dropdown">
-                <a href="#">Actualités <i className="bi bi-chevron-down"></i></a>
+                <a href="/actualite">Actualités <i className="bi bi-chevron-down"></i></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Culture</a></li>
-                  <li><a href="#">Budget municipal</a></li>
-                  <li><a href="#">Urbanisme</a></li>
+                  <li><a href="/actualite">Culture</a></li>
+                  <li><a href="/actualite">Budget municipal</a></li>
+                  <li><a href="/actualite">Urbanisme</a></li>
                   <li className="dropdown">
                    
                    

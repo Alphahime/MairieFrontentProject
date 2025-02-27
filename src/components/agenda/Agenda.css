@@ -1,310 +1,179 @@
-/* Filter Button Styling */
-.agenda-filter-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+/* Agenda.css */
 
-/* Conteneur de la bannière */
-.agenda-banner {
-  position: relative;
+.agenda-container {
+  font-family: Arial, sans-serif;
   width: 100%;
-  height: 350px;
-  /* Ajustez la hauteur selon vos besoins */
-  overflow: hidden;
-  margin-bottom: 3rem;
+  margin: 0 auto;
 }
 
-/* Image de la bannière */
-.agenda-banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* L'image couvre tout l'espace disponible */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  /* L'image sera derrière l'overlay et le texte */
-}
-
-/* Overlay sombre */
-.agenda-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec 50% de transparence */
-  z-index: -1;
-  /* L'overlay est au-dessus de l'image mais derrière le texte */
-}
-
-/* Conteneur du texte */
-.agenda-banner-text {
-  position: absolute;
-  top: 50%;
-  /* Centre verticalement */
-  left: 50%;
-  /* Centre horizontalement */
-  transform: translate(-50%, -50%);
-  /* Ajuste le texte pour qu'il soit parfaitement centré */
-  color: white;
+/* Bannière */
+.banner {
   text-align: center;
+  background: linear-gradient(to right, #000000, #22a0c7);
+  color: white;
   padding: 20px;
-  z-index: 1;
-  /* S'assure que le texte reste au-dessus de l'image */
+  margin-bottom: 20px;
 }
 
-/* Style pour le titre h1 */
-.agenda-banner-text h1 {
+.banner h1 {
+  margin: 0;
   font-size: 2.5rem;
+}
+
+.banner p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+/* Conteneur des filtres et de la recherche */
+.filtre-recherche-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+/* Boutons de filtre */
+.filtre-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filtre-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #32bde8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtre-buttons button:hover {
+  background-color: #1a9bbf;
+}
+
+.filtre-buttons button.active {
+  background-color: #1a9bbf;
   font-weight: bold;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  margin-left: 5px;
+  font-size: 14px;
+  width: 200px;
+  height: 20px;
+}
+
+.search-bar .search-icon {
+  color: #666;
+}
+
+/* Grille des projets */
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.projet-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projet-card h2 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #333;
+}
+
+.projet-card .description {
+  font-size: 14px;
+  color: #666;
   margin-bottom: 10px;
 }
 
-/* Style pour le paragraphe p */
-.agenda-banner-text p {
-  font-size: 1.2rem;
-  margin: 0;
+.projet-card .details {
+  font-size: 14px;
+  color: #333;
 }
 
-/* Media Queries pour ajuster l'affichage sur les petits écrans */
-@media (max-width: 768px) {
-  .agenda-banner-text h1 {
-    font-size: 2rem;
-    /* Taille du titre plus petite sur les petits écrans */
-  }
-
-  .agenda-banner-text p {
-    font-size: 1rem;
-    /* Taille du texte plus petite */
-  }
+.projet-card .details p {
+  margin: 5px 0;
 }
 
+.projet-card .statut {
+  font-weight: bold;
+}
 
+.projet-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
-.agenda-filter-buttons button {
-  background-color:
-    #32bde8;
+/* Pagination personnalisée */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  margin: 3rem;
+}
+
+.pagination-container button {
+  background-color: #32bde8;
   color: white;
   border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
+  padding: 8px 12px;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.agenda-filter-buttons button:hover {
-  background-color:
-    #32bde8;
-}
-
-/* Icon Styling on Card */
-/* .agenda-item-icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border: 2px solid #007bff;
-}
-
-.agenda-item-icon.ongoing {
-  background-color: transparent; 
-} */
-
-/* .agenda-item-icon.completed {
-  background-color: #007bff; 
-}
-
-.agenda-item-icon.upcoming {
-  background-color: #007bff; 
-} */
-
-/* General Card Styling */
-.agenda-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 45%;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  position: relative;
-}
-
-.agenda-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.agenda-item-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.agenda-item:hover .agenda-item-image {
-  transform: scale(1.1);
-}
-
-.agenda-item-content {
-  font-size: 1rem;
-}
-
-.agenda-item-content strong {
-  font-weight: bold;
-}
-
-.button2 {
-  display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  color: #090909;
-  padding: 0.7em 1.7em;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  transition: background-color 0.3s ease;
 }
 
-.button2:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+.pagination-container button:hover:not(:disabled) {
+  background-color: #1a9bbf;
 }
 
-.button2:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-  top: 100%;
-  width: 140%;
-  height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
+.pagination-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.button2:after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-  top: 180%;
-  width: 160%;
-  height: 190%;
-  background-color: #32bde8;
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.button2:hover {
-  color: #ffffff;
-  border: 1px solid #32bde8;
-}
-
-.button2:hover:before {
-  top: -35%;
-  background-color:
-    #32bde8;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.button2:hover:after {
-  top: -45%;
-  background-color:
-    #32bde8;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-/* Container des cartes avec Flexbox pour disposer les éléments en rangées de 3 */
-.agenda-items-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* Permet aux éléments de passer à la ligne suivante lorsque la largeur est atteinte */
-  gap: 3rem;
-  /* Espace entre les cartes */
-  justify-content: center;
-  /* Espace égal entre les éléments */
-  margin-bottom: 2rem;
-}
-
-.agenda-item {
-  width: calc(33.33% - 20px);
-  /* Chaque carte prend environ 33% de la largeur du container, en tenant compte de l'espace entre elles */
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px;
-  position: relative;
-}
-
-.agenda-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.agenda-item-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.agenda-item:hover .agenda-item-image {
-  transform: scale(1.1);
-}
-
-.agenda-item-content {
-  font-size: 1rem;
-}
-
-.agenda-item-content strong {
+.pagination-container button.active {
+  background-color: #1a9bbf;
   font-weight: bold;
 }
 
-/* Pour les petits écrans (tablettes, mobiles), ajuster la taille des cartes */
-@media (max-width: 768px) {
-  .agenda-item {
-    width: calc(50% - 20px);
-    /* 2 cartes par ligne pour les écrans plus petits */
-  }
-}
-
-@media (max-width: 480px) {
-  .agenda-item {
-    width: 100%;
-    /* 1 carte par ligne pour les écrans encore plus petits */
-  }
+.pagination-container .ellipsis {
+  padding: 8px 12px;
+  color: #333;
 }
