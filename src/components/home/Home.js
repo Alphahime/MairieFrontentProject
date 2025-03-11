@@ -103,9 +103,11 @@ const Home = () => {
     <div className="row">
       <div className="col">
         <div className="card">
-          <h2>Mots du maire</h2>
+          <h2>Mot du Maire</h2>
           <p>
-            Bienvenue sur le site officiel de la commune de Thiaroye sur Mer. Notre municipalité, dynamique et ancrée dans sa culture, est un carrefour de vie avec une histoire riche. Découvrez ici tout ce qui fait le charme de Thiaroye sur Mer : son histoire, ses projets, ses initiatives et ses acteurs engagés pour une commune viable, compétitive et attractive.
+            Bienvenue sur le site officiel de la Commune de Thiaroye sur mer.
+             Notre municipalité, dynamique et ancrée dans sa culture, est un carrefour de vie avec une histoire riche. 
+             Découvrez ici tout ce qui fait le charme de Thiaroye sur mer : son histoire, ses projets, ses initiatives et ses acteurs engagés pour une commune viable, compétitive et attractive.
           </p>
           <div className="cardreseau">
             <a href="#" className="socialContainer containerOne">
@@ -130,7 +132,7 @@ const Home = () => {
             alt="Monsieur le Maire de Thiaroye sur Mer"
           />
           <div className="bannermaire">
-            <h3>Me El Mamadou Ndiaye 
+            <h3>Me El Mamadou NDIAYE
              Maire de Thiaroye sur mer 
            </h3>
           </div>

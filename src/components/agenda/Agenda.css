@@ -133,8 +133,9 @@
 }
 
 .projet-image {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Largeur de l'image à 100% du conteneur */
+  height: 150px; /* Hauteur fixe pour l'image */
+  object-fit: cover; /* Conserver le ratio de l'image sans déformation */
   border-radius: 5px;
   margin-top: 10px;
 }

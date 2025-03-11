@@ -50,7 +50,7 @@ import Deliberation from "./components/Deliberation/Deliberation";
 
 import HomeAdmin from "./components/administrateur/home-admin/HomeAdmin";
 import GestionRendezVous from "./components/administrateur/gestion-rendez-vous/GestionRendezVous";
-// import BoiteAIdee from "./components/administrateur/boite-a-idee/BoiteAIdee";
+import BoiteAIdeeadmin from "./components/administrateur/boite-a-idee/BoiteAIdee";
 import Actualites from "./components/administrateur/actualites/Actualites";
 import Projets from "./components/administrateur/projets/Projets";
 import DemandeDocuments from "./components/administrateur/demande-documents/DemandeDocuments";
@@ -111,13 +111,13 @@ function App() {
 
 
           <Route path="/admin/gestion-rendez-vous" element={<GestionRendezVous />} />
-         {/* <Route path="/boite-a-idee" element={<BoiteAIdee />} /> */}
+         <Route path="/admin/boite-a-idee" element={<BoiteAIdeeadmin />} />
          <Route path="/admin/actualites" element={<Actualites />} />
         <Route path="/admin/projets" element={<Projets />} />
         <Route path="/admin/demande-documents" element={<DemandeDocuments />} />
 
         
-        {/* <Route path="home" element={<HomeAdmin />} /> */}
+        <Route path="home" element={<HomeAdmin />} />
         
 
         </Routes>

@@ -1,108 +1,113 @@
-/* Header et Navigation */
-.header .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px; 
-  }
-  
-  .logo {
-    width: 70px; 
-    height: 70px;
-    border-radius: 100%;
-    background-image: url('../../assets/images/logothiaroyesurmer.jpeg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-  }
-  
-  .navmenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navmenu ul li {
-    position: relative;
-    margin: 0 4px;
-  }
-  
-  .navmenu ul li a {
-    font-size: 16px;
-    color: #333;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px;
-  }
-  
-  .navmenu ul li a:hover,
-  .navmenu ul li a.active {
-      color: 
-      #32bde8; /* Couleur du texte pour les onglets actifs ou survolés */
-      background-color: transparent; /* Supprime le fond bleu */
-      border-bottom: 2px solid 
-      #32bde8; /* Ajoute un trait soulignant */
-  }
-  
-  
-  /* Dropdown Styles */
-  .navmenu ul li .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    min-width: 200px;
-    z-index: 10;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .navmenu ul li:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .navmenu ul li .dropdown-menu li {
-    margin: 0;
-  }
-  
-  .navmenu ul li .dropdown-menu li a {
-    padding: 10px 20px;
-    color: #333;
-    font-size: 14px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .navmenu ul li .dropdown-menu li a:hover {
-    background-color: 
-    #32bde8;
-    color: #fff;
-  }
-  
-  /* Sub Dropdown */
-  .navmenu ul li .dropdown-menu li .dropdown-menu {
-    top: 0;
-    left: 100%;
-    transform: translateX(10px);
-  }
-  
-  .navmenu ul li .dropdown-menu li:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
+/* Header principal */
 
-  
+
+/* Conteneur du Header */
+/* Conteneur du Header */
+.header-container {
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Assure que le conteneur prend toute la largeur */
+}
+
+/* Logo */
+.header-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-image: url('../../assets/images/logothiaroyesurmer.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: auto; /* Pousse le logo à gauche */
+}
+
+/* Navigation */
+.header-navmenu {
+  margin: 0 auto; /* Centre le menu de navigation */
+}
+
+.header-navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-navmenu ul li {
+  position: relative;
+  margin: 0 4px;
+}
+
+.header-navmenu ul li a {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.header-navmenu ul li a:hover,
+.header-navmenu ul li a.active {
+  color: #32bde8; /* Couleur du texte pour les onglets actifs ou survolés */
+  background-color: transparent; /* Supprime le fond bleu */
+  border-bottom: 2px solid #32bde8; /* Ajoute un trait soulignant */
+}
+
+/* Dropdown Styles */
+.header-navmenu ul li .header-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.header-navmenu ul li:hover .header-dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-navmenu ul li .header-dropdown-menu li {
+  margin: 0;
+}
+
+.header-navmenu ul li .header-dropdown-menu li a {
+  padding: 10px 20px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header-navmenu ul li .header-dropdown-menu li a:hover {
+  background-color: #32bde8;
+  color: #fff;
+}
+
+/* Sub Dropdown */
+.header-navmenu ul li .header-dropdown-menu li .header-dropdown-menu {
+  top: 0;
+  left: 100%;
+  transform: translateX(10px);
+}
+
+.header-navmenu ul li .header-dropdown-menu li:hover .header-dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}

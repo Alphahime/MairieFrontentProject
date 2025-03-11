@@ -90,6 +90,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  
 }
 
 .about .container {
@@ -281,6 +282,8 @@ body {
   
     .hero h2 {
       font-size: 36px;
+      
+
     }
   }
   

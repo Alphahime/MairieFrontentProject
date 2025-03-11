@@ -1,0 +1,79 @@
+.home-admin {
+    padding: 20px;
+    background-color: #ffffff; /* Fond blanc */
+    color: #000000; /* Texte noir */
+}
+
+.grid-containeradmin {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: 45%; /* Deux colonnes */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid-itemadmin {
+    background-color: #f9f9f9; /* Fond des modules */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-itemadmin h2 {
+    margin-top: 0;
+    color: #32bde8; /* Couleur des titres */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Bordure des cellules */
+}
+
+th {
+    background-color: #32bde8; /* Couleur de l'en-tête */
+    color: #ffffff; /* Texte de l'en-tête */
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff0000; /* Couleur de l'icône de suppression */
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #32bde8;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #1a8fb3;
+}

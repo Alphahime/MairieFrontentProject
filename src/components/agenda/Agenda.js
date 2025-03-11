@@ -136,6 +136,7 @@ const Agenda = () => {
             <div className="projets-grid">
                 {currentProjects.map((projet) => (
                     <div key={projet.id} className="projet-card">
+                         <img src={projet.image_url} alt={projet.nom} className="projet-image" />
                         <h2>{projet.nom}</h2>
                         <p className="description">{projet.description}</p>
                         <div className="details">
@@ -147,7 +148,7 @@ const Agenda = () => {
                             <p><strong>Budget:</strong> {projet.budget} XOF</p>
                             <p><strong>Responsable:</strong> {projet.responsable}</p>
                         </div>
-                        <img src={projet.image_url} alt={projet.nom} className="projet-image" />
+                       
                     </div>
                 ))}
             </div>

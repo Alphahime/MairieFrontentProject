@@ -98,6 +98,28 @@ export const getActualites = async () => {
     }
 };
 
+export const addActualite = async (data) => {
+    const response = await fetch(`${API_URL}/actualites`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return response.json();
+};
+
+export const updateActualite = async (id, data) => {
+    const response = await fetch(`${API_URL}/actualites/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+    return response.json();
+};
+
 
 
 // Fonction pour récupérer tous les documents
@@ -199,6 +221,62 @@ export const createRendezVous = async (rendezVousData) => {
         return data;
     } catch (error) {
         console.error("Erreur lors de la création du rendez-vous :", error);
+        throw error;
+    }
+};
+
+// Fonction pour supprimer un rendez-vous
+export const deleteRendezVous = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/rendez-vous/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la suppression du rendez-vous :", error);
+        throw error;
+    }
+};
+
+// Fonction pour supprimer une idée
+export const deleteBoiteIdee = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/boite-a-idees/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la suppression de l'idée :", error);
+        throw error;
+    }
+};
+
+// Fonction pour supprimer un projet
+export const deleteProjet = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/projets/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la suppression du projet :", error);
+        throw error;
+    }
+};
+
+// Fonction pour supprimer une actualité
+export const deleteActualite = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/actualites/${id}`, {
+            method: "DELETE",
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Erreur lors de la suppression de l'actualité :", error);
         throw error;
     }
 };
