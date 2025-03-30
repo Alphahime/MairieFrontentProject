@@ -1,32 +1,35 @@
 /* Styles généraux */
 .main-content {
     flex: 1;
-    margin-left: 250px; /* Laisse de l'espace pour la Sidebar */
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #32bde8;
-    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    margin-right: 10px;
+    color: #666;
 }
 
 .search-bar input {
     border: none;
     outline: none;
-    margin-left: 10px;
-    width: 200px;
+    background: transparent;
 }
 
 .user-info {
@@ -34,35 +37,32 @@
     align-items: center;
 }
 
-.user-info span {
-    margin-left: 10px;
+.user-icon {
+    margin-right: 10px;
+    color: #666;
 }
 
-/* Contenu principal */
 .actualites-container {
+    background-color: #fff;
     padding: 20px;
-    background-color: #ffffff;
-    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .add-button {
     background-color: #32bde8;
-    color: #ffffff;
+    color: #fff;
     border: none;
     padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 5px;
 }
 
 .add-button:hover {
-    background-color: #1a8fb3;
+    background-color: #2aa8d0;
 }
 
-/* Popup */
 .popup {
     position: fixed;
     top: 0;
@@ -76,14 +76,11 @@
 }
 
 .popup-content {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
-    width: 600px;
-}
-
-.popup-content h2 {
-    margin-top: 0;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 600px;
 }
 
 .form-grid {
@@ -97,84 +94,104 @@
     flex-direction: column;
 }
 
+.form-column label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-column input,
+.form-column textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 .form-buttons {
-    grid-column: span 2;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
 }
 
-.popup-content label {
-    margin-bottom: 5px;
-}
-
-.popup-content input,
-.popup-content textarea {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.submit-button,
-.cancel-button {
-    padding: 8px 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
 .submit-button {
     background-color: #32bde8;
-    color: #ffffff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #2aa8d0;
 }
 
 .cancel-button {
-    background-color: #f44336;
-    color: #ffffff;
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.submit-button:hover,
 .cancel-button:hover {
-    opacity: 0.8;
+    background-color: #bbb;
 }
 
-/* Tableau */
 .actualites-table {
-    width: 80%;
-    margin: 20px auto;
-    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-th, td {
-    padding: 8px;
+.actualites-table th,
+.actualites-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid #ddd;
 }
 
-th {
+.actualites-table th {
     background-color: #32bde8;
-    color: #ffffff;
+    color: #fff;
 }
 
 .edit-button,
 .delete-button {
-    background: none;
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    margin: 0 5px;
-}
-
-.edit-button {
-    color: #32bde8;
-}
-
-.delete-button {
-    color: #f44336;
+    color: #666;
+    margin-right: 10px;
 }
 
 .edit-button:hover,
 .delete-button:hover {
-    opacity: 0.8;
+    color: #32bde8;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #32bde8;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #2aa8d0;
+}
+
+.pagination button:hover {
+    background-color: #2aa8d0;
 }

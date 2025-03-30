@@ -13,11 +13,11 @@ function Topbar() {
 </div>
 
       <div className="footer-socialstopbar">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-        <a href="https://wa.me/221338498181" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+        <a href="https://www.facebook.com/share/1EVtUkvYSq/" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+        <a href="https://x.com/Communetsm?t=lpUH5oepjzxHGYPOy099kg&s=08" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
+        <a href="https://www.instagram.com/communedethiaroyesurmer?utm_source=qr&igsh=MWVhcnV5a2xoOWRxcA==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/posts/commune-de-thiaroye-sur-mer_thiaroyebiaehubaebg-thiaroyebubess-inclusion-activity-7300974448248041474-lHVx?utm_source=share&utm_medium=member_android&rcm=ACoAAFabC74BvQC5UDj5BE4V_HfpFqruPwDdt6g" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+        <a href="https://whatsapp.com/channel/0029VamEcIiC1Fu4BtJnKk1q" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
       </div>
     </div>
   );

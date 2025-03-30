@@ -98,14 +98,18 @@ export const getActualites = async () => {
     }
 };
 
-export const addActualite = async (data) => {
+export const addActualite = async (formData) => {
     const response = await fetch(`${API_URL}/actualites`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+        // Ne pas mettre le header Content-Type, le navigateur le fera automatiquement
+        // avec la boundary correcte pour FormData
+        body: formData // FormData déjà créé dans le composant
     });
+    
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to add actualite');
+    }
     return response.json();
 };
 
@@ -198,14 +202,31 @@ export { API_URL};
 // Récupérer tous les rendez-vous
 export const getRendezVous = async () => {
     try {
-        const response = await fetch(`${API_URL}/rendez-vous`);
-        const data = await response.json();
-        return data;
+      const response = await fetch(`${API_URL}/rendez-vous`);
+      if (!response.ok) throw new Error('Erreur réseau');
+      return await response.json();
     } catch (error) {
-        console.error("Erreur lors de la récupération des rendez-vous :", error);
-        throw error;
+      console.error("Erreur API:", error);
+      throw error;
     }
-};
+  };
+  
+  export const updateRendezVous = async (id, data) => {
+    try {
+      const response = await fetch(`${API_URL}/rendez-vous/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error('Erreur lors de la mise à jour');
+      return await response.json();
+    } catch (error) {
+      console.error("Erreur API:", error);
+      throw error;
+    }
+  };
 
 // prise de un nouveau rendez-vous
 export const createRendezVous = async (rendezVousData) => {
@@ -228,16 +249,16 @@ export const createRendezVous = async (rendezVousData) => {
 // Fonction pour supprimer un rendez-vous
 export const deleteRendezVous = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/rendez-vous/${id}`, {
-            method: "DELETE",
-        });
-        const data = await response.json();
-        return data;
+      const response = await fetch(`${API_URL}/rendez-vous/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Erreur lors de la suppression');
+      return await response.json();
     } catch (error) {
-        console.error("Erreur lors de la suppression du rendez-vous :", error);
-        throw error;
+      console.error("Erreur API:", error);
+      throw error;
     }
-};
+  };
 
 // Fonction pour supprimer une idée
 export const deleteBoiteIdee = async (id) => {

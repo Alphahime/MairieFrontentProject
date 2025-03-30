@@ -14,7 +14,7 @@ const Footer = () => {
 
         <div className="footer-section">
           <h4>Téléphone</h4>
-          <p>(+221) 33 000 00 00</p>
+          <p>(+221) 33 872 71 41</p>
           <h4>Email</h4>
           <p>contact@thiaroye.com</p>
         </div>
@@ -52,7 +52,7 @@ const Footer = () => {
 
       {/* Bas du footer */}
       <div className="footer-bottom">
-        <p>© 2025 THIAROYE SUR MER - Réalisé par Expert plus contact.expertplus.sn Tous droits réservés.</p>
+        <p>© 2025 Thiaroye sur mer </p>
       </div>
     </footer>
   );

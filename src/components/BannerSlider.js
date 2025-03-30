@@ -34,7 +34,7 @@ const BannerSlider = () => {
     },
     {
       image: thiaroyeHistoryImage,
-      text: "Découvrez l'histoire de Thiaroye.",
+      text: "Bienvenue sur le site officiel de la mairie de Thiaroye sur mer .",
       link: "#explore-history",
     },
   ];
@@ -62,7 +62,7 @@ const BannerSlider = () => {
             <div className="slide-text">
               <p>{slide.text}</p>
               <a href={slide.link} className="explore-btn">
-                Explorer
+                EN SAVOIR PLUS
               </a>
             </div>
           </div>

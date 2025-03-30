@@ -1,0 +1,139 @@
+.gestion-rendez-vous-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filters button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: all 0.3s;
+  }
+  
+  .filters button.active {
+    background-color: #32bde8;
+    color: white;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .rendez-vous-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .rendez-vous-table th, 
+  .rendez-vous-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rendez-vous-table th {
+    background-color: #32bde8;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .rendez-vous-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .statut-confirmé {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .statut-en_attente {
+    background-color: #FFC107;
+    color: black;
+  }
+  
+  .statut-annulé {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-accepter {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-refuser {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-reset {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: #F44336;
+  }
+
+  .btn-supprimer {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  
+  .btn-supprimer:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Ajustez le conteneur d'actions si nécessaire */
+  .actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }

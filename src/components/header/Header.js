@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Topbar from '../Topbar/Topbar';
 import { Link } from "react-router-dom";
-
+import { FaBars, FaTimes } from "react-icons/fa"; // Import des icônes
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header id="header" className="header-main fixed-top">
       <Topbar />
@@ -11,7 +17,18 @@ const Header = () => {
       <div className="header-branding d-flex align-items-center">
         <div className="header-container position-relative d-flex align-items-center justify-content-between">
           <div className="header-logo"></div>
-          <nav id="header-navmenu" className="header-navmenu">
+          
+           {/* Nouveau bouton avec React Icons */}
+          <button 
+            className="burger-menu" 
+            onClick={toggleMenu}
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+          
+          <nav id="header-navmenu" className={`header-navmenu ${menuOpen ? "active" : ""}`}>
+
             <ul>
               <li className="header-dropdown">
                 <Link to="/" className="active">Accueil</Link>
@@ -60,6 +77,15 @@ const Header = () => {
                   <li>
                     <Link to="/deliberation">Délibération</Link>
                   </li>
+                  <li>
+                    <Link to="/pai">PAI</Link>
+                  </li>
+                  <li>
+                    <Link to="/pti">PTI</Link>
+                  </li>
+                  <li>
+                    <Link to="/projet-restructuration">Restructuration urbaine</Link>
+                  </li>
                 </ul>
               </li>
 
@@ -70,8 +96,11 @@ const Header = () => {
                 <a href="/actualite">Actualités <i className="bi bi-chevron-down"></i></a>
                 <ul className="header-dropdown-menu">
                   <li><a href="/actualite">Culture</a></li>
-                  <li><a href="/actualite">Budget municipal</a></li>
+                  <li><a href="/actualite">Education</a></li>
                   <li><a href="/actualite">Urbanisme</a></li>
+                  <li><a href="/actualite">Sport</a></li>
+                  <li><a href="/actualite">Politique</a></li>
+                  <li><a href="/actualite">Economie</a></li>
                 </ul>
               </li>
 

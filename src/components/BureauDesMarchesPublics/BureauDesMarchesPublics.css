@@ -67,3 +67,59 @@
     color: #555;
     line-height: 1.4;
   }
+
+  /* Version mobile */
+@media (max-width: 768px) {
+  .bureau-container {
+    padding: 15px;
+  }
+
+  .bureau-text h1 {
+    font-size: 1.5rem; /* Taille réduite */
+    margin-bottom: 8px;
+  }
+
+  .bureau-text p {
+    font-size: 0.9rem; /* Taille réduite */
+  }
+
+  .cards-containerbureau {
+    flex-direction: column; /* Empilement vertical */
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .cardbureau {
+    width: 100%; /* Pleine largeur */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .cardbureau h2 {
+    font-size: 0.95rem; /* Taille ajustée */
+    font-weight: bold; /* Texte en gras */
+  }
+
+  .cardbureau p {
+    font-size: 0.85rem; /* Taille légèrement augmentée */
+  }
+
+  .iconbureau {
+    font-size: 1.4rem; /* Taille ajustée */
+  }
+}
+
+/* Version très petits mobiles */
+@media (max-width: 480px) {
+  .bureau-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .cardbureau {
+    padding: 12px;
+  }
+
+  .cardbureau h2 {
+    font-size: 0.9rem;
+  }
+}

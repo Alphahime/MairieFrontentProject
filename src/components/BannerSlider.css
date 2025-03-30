@@ -29,10 +29,10 @@
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    padding-top: 18rem;
+    padding-top: 10rem;
   }
   
   /* Boutons de navigation */
@@ -45,7 +45,7 @@
     color: white;
     font-size: 1.5rem;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 100%;
     cursor: pointer;
     z-index: 2;
    
@@ -83,3 +83,56 @@
     #32bde8;
   }
   
+
+  /* Media Queries pour la version mobile */
+@media (max-width: 768px) {
+  .banner-slider {
+    height: 300px; /* Réduire la hauteur du slider */
+  }
+
+  .slide img {
+    height: 300px; /* Ajuster la hauteur de l'image */
+  }
+
+  .slide-text {
+    height: 300px; /* Ajuster la hauteur du texte */
+    font-size: 1.5rem; /* Réduire la taille de la police */
+    padding-top: 5rem; /* Ajuster le padding */
+  }
+
+  .slider-btn {
+    font-size: 1rem; /* Réduire la taille des boutons */
+    padding: 8px; /* Ajuster le padding des boutons */
+  }
+
+  .explore-btn {
+    padding: 8px 16px; /* Ajuster le padding du bouton */
+    font-size: 0.9rem; /* Réduire la taille de la police */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-slider {
+    height: 250px; /* Réduire encore la hauteur pour les très petits écrans */
+  }
+
+  .slide img {
+    height: 250px; /* Ajuster la hauteur de l'image */
+  }
+
+  .slide-text {
+    height: 250px; /* Ajuster la hauteur du texte */
+    font-size: 1.2rem; /* Réduire davantage la taille de la police */
+    padding-top: 4rem; /* Ajuster le padding */
+  }
+
+  .slider-btn {
+    font-size: 0.8rem; /* Réduire encore la taille des boutons */
+    padding: 6px; /* Ajuster le padding des boutons */
+  }
+
+  .explore-btn {
+    padding: 6px 12px; /* Ajuster le padding du bouton */
+    font-size: 0.8rem; /* Réduire davantage la taille de la police */
+  }
+}

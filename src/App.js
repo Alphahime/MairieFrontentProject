@@ -55,6 +55,9 @@ import Actualites from "./components/administrateur/actualites/Actualites";
 import Projets from "./components/administrateur/projets/Projets";
 import DemandeDocuments from "./components/administrateur/demande-documents/DemandeDocuments";
 
+import PAI from "./components/PAI/PAI";
+import PTI from "./components/PTI/PTI";
+import ProjetRestructuration from './components/projet-restructuration/ProjetRestructuration';
 
 function App() {
   return (
@@ -118,7 +121,11 @@ function App() {
 
         
         <Route path="home" element={<HomeAdmin />} />
+
+        <Route path="/pai" element={<PAI />} />
+        <Route path="/pti" element={<PTI />} />
         
+        <Route path="/projet-restructuration" element={<ProjetRestructuration />} />
 
         </Routes>
       </div>

@@ -67,3 +67,74 @@
     color: #555;
     line-height: 1.4;
   }
+
+  /* Version mobile */
+@media (max-width: 768px) {
+  .bdl-container {
+    padding: 15px;
+  }
+
+  .bdl-text h1 {
+    font-size: 1.5rem; /* Taille réduite pour mobile */
+    margin-bottom: 8px;
+  }
+
+  .bdl-text p {
+    font-size: 0.9rem; /* Taille réduite pour mobile */
+  }
+
+  .cards-containerbdl {
+    flex-direction: column; /* Empilement vertical */
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .cardbdl {
+    width: 100%; /* Pleine largeur */
+    max-width: 350px; /* Largeur maximale pour une meilleure lisibilité */
+    margin: 0 auto; /* Centrage */
+    padding: 15px;
+  }
+
+  .cardbdl h2 {
+    font-size: 0.95rem;
+    font-weight: bold; /* Titres en gras */
+  }
+
+  .cardbdl p {
+    font-size: 0.85rem; /* Taille légèrement augmentée */
+  }
+
+  .iconbdl {
+    font-size: 1.4rem; /* Taille ajustée */
+  }
+}
+
+/* Version très petits mobiles */
+@media (max-width: 480px) {
+  .bdl-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .cardbdl {
+    padding: 12px;
+  }
+
+  .cardbdl h2 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Option: Disposition 2 colonnes pour les tablettes */
+@media (min-width: 481px) and (max-width: 768px) {
+  .cards-containerbdl {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 15px;
+  }
+  
+  .cardbdl {
+    width: 100%;
+    max-width: none;
+  }
+}

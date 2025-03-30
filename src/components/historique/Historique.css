@@ -282,3 +282,81 @@ h2 {
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+
+/* Version mobile */
+@media screen and (max-width: 768px) {
+  .section-item {
+    flex-direction: column !important; /* Superposition verticale */
+  }
+
+  .section-item.reverse {
+    flex-direction: column !important; /* Même pour la version reverse */
+  }
+
+  .section-image, 
+  .section-text {
+    width: 100% !important; /* Prend toute la largeur */
+    max-width: 100% !important;
+  }
+
+  .section-image {
+    margin-bottom: 20px; /* Espace entre image et texte */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+  }
+
+  .section-text {
+    padding: 0 15px; /* Petit padding sur les côtés */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+  }
+
+  .accordion {
+    width: 100%; /* Accordéon en pleine largeur */
+  }
+
+  .accordion-button {
+    width: 100%; /* Boutons en pleine largeur */
+    text-align: left; /* Alignement du texte à gauche */
+    padding: 12px 15px; /* Padding pour un meilleur touch */
+  }
+
+  .accordion-content {
+    width: 100%; /* Contenu en pleine largeur */
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero-historique {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll; /* Important pour mobile */
+  }
+
+  .hero-overlay {
+    background-color: rgba(0,0,0,0.5); /* Fond semi-transparent pour meilleure lisibilité */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* Version mobile - Titres h2 */
+@media screen and (max-width: 768px) {
+  .section-text h2 {
+    font-size: 1.5rem; /* Taille réduite (24px environ) */
+    line-height: 1.3; /* Interligne ajusté */
+    margin: 0.8em 0 0.5em 0; /* Marge réduite */
+  }
+  
+  /* Option pour les très petits écrans */
+  @media screen and (max-width: 480px) {
+    .section-text h2 {
+      font-size: 1.3rem; /* Taille encore plus petite (21px) */
+      margin: 0.6em 0 0.4em 0;
+    }
+  }
+}

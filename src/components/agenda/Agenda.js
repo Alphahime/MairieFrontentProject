@@ -86,8 +86,8 @@ const Agenda = () => {
             <Header />
             {/* Bannière */}
             <div className="banner">
-                <h1>Projets</h1>
-                <p>Découvrez tous les projets en cours, planifiés et terminés.</p>
+                <h1>Projets/Programmes</h1>
+                <p>Découvrez tous les projets et programmes de la mairie .</p>
             </div>
 
             {/* Filtres et recherche */}

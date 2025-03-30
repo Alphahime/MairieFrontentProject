@@ -68,3 +68,65 @@
   color: #555;
   line-height: 1.4;
 }
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .service-technique {
+    padding: 15px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .main-content h1 {
+    font-size: 1.6rem; /* Taille réduite */
+    margin-bottom: 15px;
+  }
+
+  .main-content p {
+    font-size: 0.9rem; /* Taille réduite */
+    margin-bottom: 30px;
+  }
+
+  .services-axes {
+    flex-direction: column; /* Empilement vertical */
+    gap: 15px;
+    align-items: center;
+  }
+
+  .axe {
+    width: 100%; /* Pleine largeur */
+    max-width: 350px; /* Largeur maximale pour une meilleure lisibilité */
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .axe h2 {
+    font-size: 0.95rem; /* Taille légèrement augmentée pour mobile */
+    font-weight: bold; /* Texte en gras */
+  }
+
+  .axe p {
+    font-size: 0.85rem; /* Taille légèrement augmentée */
+  }
+
+  .iconaxe {
+    font-size: 1.4rem; /* Taille ajustée */
+  }
+}
+
+/* Version très petits mobiles (optionnel) */
+@media (max-width: 480px) {
+  .main-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .axe {
+    padding: 12px;
+  }
+
+  .axe h2 {
+    font-size: 0.9rem;
+  }
+}

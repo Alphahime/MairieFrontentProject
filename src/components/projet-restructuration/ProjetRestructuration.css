@@ -1,0 +1,131 @@
+/* Reprend le style de base de PDC.css */
+.bigcontent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .pdc-containerprojet {
+    flex: 1;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .pdc-containerprojet h1 {
+    font-size: 2rem;
+    color: #32bde8;
+    margin-bottom: 10px;
+  }
+  
+  .pdc-containerprojet h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  
+  .pdc-containerprojet p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  
+  .pdc-documentprojet {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .pdc-linkprojet {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #32bde8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .pdc-linkprojet:hover {
+    background-color: #2a9fd8;
+    transform: translateY(-2px);
+  }
+  
+  .project-infosprojet {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .project-infosprojet h3 {
+    color: #32bde8;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .project-infosprojet ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .project-infosprojet li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .project-infosprojet strong {
+    color: #333;
+    min-width: 120px;
+    display: inline-block;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pdc-containerprojet h1 {
+      font-size: 1.6rem;
+    }
+    
+    .pdc-containerprojet h2 {
+      font-size: 1.2rem;
+    }
+  
+    .pdc-containerprojet p {
+      font-size: 0.9rem;
+    }
+  
+    .pdc-linkprojet {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  
+    .project-infosprojet {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pdc-documentprojet {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .pdc-linkprojet {
+      width: 100%;
+      justify-content: center;
+    }
+  }

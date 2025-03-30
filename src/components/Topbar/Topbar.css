@@ -75,3 +75,53 @@
     background-color: #128c7e; /* Couleur de fond WhatsApp au survol */
   }
   
+
+  /* Version mobile responsive */
+@media (max-width: 768px) {
+  .topbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 0;
+      text-align: center;
+  }
+
+  .topbar-left {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.4;
+  }
+
+  .topbar-left p {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .footer-socialstopbar {
+      margin: 10px 0;
+      gap: 10px;
+  }
+
+  .footer-socialstopbar a {
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-left {
+      font-size: 11px;
+  }
+
+  .footer-socialstopbar {
+      gap: 8px;
+  }
+
+  .footer-socialstopbar a {
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
+  }
+}
