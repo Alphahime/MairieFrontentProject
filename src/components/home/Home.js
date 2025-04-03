@@ -10,6 +10,25 @@ import pecheImage from '../../assets/images/peche.jpeg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
+import Actualite from '../ActualiteList/ActualitesList';
+
+import logoAfricainePetrole from "../../assets/images/logoafricainepetrole.jpeg";
+import logoAuchan from "../../assets/images/logoauchan.png";
+import logoConseil from "../../assets/images/logoconseil.jpeg";
+import logoDeegnala from "../../assets/images/logodeegnala.png";
+import logoHorizonSansFrontiere from "../../assets/images/logohorizonsansfrontiere.jpeg";
+import logoHumanAfrican from "../../assets/images/logohumanafrican.jpeg";
+import logoKing from "../../assets/images/logoking.png";
+import logoPamecas from "../../assets/images/logopamecas.jpeg";
+import logoRikotlo from "../../assets/images/logorikotlo.png";
+import logoSonaged from "../../assets/images/logosonaged.png";
+import logoNestle from "../../assets/images/logonestle.png";
+import logoPolaris from "../../assets/images/logoploaris.jpeg";
+import logoIsmo from "../../assets/images/logoismo.jpeg";
+import logoMontpelier from "../../assets/images/montepelier.png";
+import logoBesport from "../../assets/images/logobesport.png";
+import logoTmtv from "../../assets/images/logotmtv.jpg";
+import logoElite from "../../assets/images/logoelite.jpeg";
 
 AOS.init();
 
@@ -17,6 +36,9 @@ AOS.init();
 const Home = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSubDropdownOpen, setSubDropdownOpen] = useState(false);
+
+  
+
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -50,65 +72,28 @@ const Home = () => {
       
       <BannerSlider />
 
-      <section id="actualites" className="actualites-section">
-  <div className="title-container">
-      <h2>Actualités et Annonces</h2>
-      <div className="title-decoration">
-        <span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-    </div>
-  
-  <div className="actualites-container">
-    <div className="card">
-      <img
-        src={require('../../assets/images/cemthiaroyesurmer.jpg')}
-        alt="Travaux de réfection des routes"
-        className="card-image"
-      />
-      <div className="card-content-wrapper">
-        <h3 className="card-title">Travaux de réfection des routes</h3>
-        <p className="card-content">
-          La mairie commence les travaux de réfection des routes principales dès la semaine prochaine.
-        </p>
-        <a href="#" className="card-link"><span>Découvrir</span></a>
-      </div>
-    </div>
-    <div className="card">
-      <img
-        src={require('../../assets/images/FoireThiaroye.jpeg')}
-        alt="Réunion publique"
-        className="card-image"
-      />
-      <div className="card-content-wrapper">
-        <h3 className="card-title">Foire 2024</h3>
-        <p className="card-content">
-          Une réunion publique se tiendra le 10 décembre à 18h pour discuter des nouveaux projets.
-        </p>
-        <a href="#" className="card-link"><span>Découvrir</span></a>
-      </div>
-    </div>
-    <div className="card">
-      <img
-        src={require('../../assets/images/peche.jpeg')}
-        alt="Lancement du budget participatif"
-        className="card-image"
-      />
-     <div className="card-content-wrapper">
-  <h3 className="card-title">Lancement du budget participatif</h3>
-  <p className="card-content">
-    Participez à l'élaboration du budget municipal 2024 en partageant vos idées.
-  </p>
-  <Link to="/actualite" className="card-link">
-    <span>Découvrir</span>
-  </Link>
-</div>
-    </div>
-  </div>
-</section>
+      
 
+     {/* Section Actualités - Version simplifiée pour la page d'accueil */}
+     <section className="home-actualites">
+      <div className="title-container">
+      <h2>Actualités et Annonces</h2>
+        <div className="title-decoration">
+          <span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+      </div>
+      
+      <Actualite limit={3} homePage={true} />
+      
+      <div className="voir-plus-container">
+        <Link to="/actualite" className="voir-plus-btn">
+          Voir toutes les actualités
+        </Link>
+      </div>
+    </section>
 
 
 
@@ -242,10 +227,12 @@ const Home = () => {
         </div>
       </Link>
 
+      <Link to="/agenda" className="service-card-link">
       <div className="service-card">
-        <FaClipboard className="service-icon" />
-        <h3 className="service-title">Consultation des projets municipaux</h3>
-      </div>
+      <FaClipboard className="service-icon" />
+     <h3 className="service-title">Consultation des projets municipaux</h3>
+    </div>
+    </Link>
 
       <Link to="/rendezvous" className="service-card-link">
         <div className="service-card">
@@ -303,9 +290,9 @@ const Home = () => {
         </span>
       </div>
     </div>
-      <button class="members-btn">
-  <i class="fas fa-users"></i> Tous les membres
-</button>
+  <a href="/conseil-municipal" className="members-btn" style={{textDecoration: 'none'}}>
+  <i className="fas fa-users"></i> Tous les membres
+</a>
 
       <div className="personnalites-container">
         
@@ -471,7 +458,89 @@ const Home = () => {
         
       </div>
     </section>
-
+  
+       {/* Section Partenaires */}
+       <section className="partners-section">
+       <div className="title-container">
+      <h2> Nos partenaires</h2>
+      <div className="title-decoration">
+        <span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+    </div>
+        <div className="partners-grid">
+          {/* Logo 1 */}
+          <div className="partner-card">
+            <img src={logoAfricainePetrole} alt="Africaine Pétrole" className="partner-logo" />
+          </div>
+          {/* Logo 2 */}
+          <div className="partner-card">
+            <img src={logoAuchan} alt="Auchan" className="partner-logo" />
+          </div>
+          {/* Logo 3 */}
+          <div className="partner-card">
+            <img src={logoConseil} alt="Conseil" className="partner-logo" />
+          </div>
+          {/* Logo 4 */}
+          <div className="partner-card">
+            <img src={logoDeegnala} alt="Deegnala" className="partner-logo" />
+          </div>
+          {/* Logo 5 */}
+          <div className="partner-card">
+            <img src={logoHorizonSansFrontiere} alt="Horizon Sans Frontière" className="partner-logo" />
+          </div>
+          {/* Logo 6 */}
+          <div className="partner-card">
+            <img src={logoHumanAfrican} alt="Human African" className="partner-logo" />
+          </div>
+          {/* Logo 7 */}
+          <div className="partner-card">
+            <img src={logoKing} alt="King" className="partner-logo" />
+          </div>
+          {/* Logo 8 */}
+          <div className="partner-card">
+            <img src={logoPamecas} alt="Pamecas" className="partner-logo" />
+          </div>
+          {/* Logo 9 */}
+          <div className="partner-card">
+            <img src={logoRikotlo} alt="Rikotlo" className="partner-logo" />
+          </div>
+          {/* Logo 10 */}
+          <div className="partner-card">
+            <img src={logoSonaged} alt="Sonaged" className="partner-logo" />
+          </div>
+           {/* Logo 11 */}
+           <div className="partner-card">
+            <img src={logoNestle} alt="Nestle" className="partner-logo" />
+          </div>
+           {/* Logo 12 */}
+           <div className="partner-card">
+            <img src={logoPolaris} alt="Polaris" className="partner-logo" />
+          </div>
+           {/* Logo 13 */}
+           <div className="partner-card">
+            <img src={logoIsmo} alt="Ismo" className="partner-logo" />
+          </div>
+           {/* Logo 14 */}
+           <div className="partner-card">
+            <img src={logoMontpelier} alt="Ismo" className="partner-logo" />
+          </div>
+            {/* Logo 13 */}
+            <div className="partner-card">
+            <img src={logoBesport} alt="Ismo" className="partner-logo" />
+          </div>
+           {/* Logo 13 */}
+           <div className="partner-card">
+            <img src={logoTmtv} alt="Ismo" className="partner-logo" />
+          </div>
+            {/* Logo 13 */}
+            <div className="partner-card">
+            <img src={logoElite} alt="Ismo" className="partner-logo" />
+          </div>
+        </div>
+      </section>
 
     <Footer />
 

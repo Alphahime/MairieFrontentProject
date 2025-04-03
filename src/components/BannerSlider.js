@@ -24,13 +24,13 @@ const BannerSlider = () => {
   const slides = [
     {
       image: pecheImage,
-      text: "Découvrez la pêche artisanale.",
-      link: "#explore-peche", 
+      text: "Découvrez l'histoire de Thiaroye sur mer.",
+      link: "/Historique",
     },
     {
       image: cemThiaroyeImage,
-      text: "Explorez CEM Thiaroye-sur-Mer.",
-      link: "#explore-cem",
+      text: "Explorez les actulités de la mairie.",
+      link: "actualite",
     },
     {
       image: thiaroyeHistoryImage,

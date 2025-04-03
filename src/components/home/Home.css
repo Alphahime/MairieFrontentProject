@@ -396,6 +396,12 @@ body {
  
 }
 
+.service-card-link {
+  text-decoration: none; /* Enlève le soulignement */
+  color: inherit; /* Conserve la couleur du texte parent */
+  display: inline-block; /* Pour une meilleure gestion du flux */
+  width: 100%; /* Prend toute la largeur disponible */
+}
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -426,96 +432,64 @@ body {
   color: white;
 }
 
-/* Media Queries pour la version mobile */
+/* Version mobile - Centrage de la carte texte */
 @media (max-width: 768px) {
   .quick-services-section {
-    flex-direction: column; /* Empiler les éléments verticalement */
-    padding: 1rem; /* Réduire le padding */
-    margin: 2rem 0; /* Réduire la marge */
+    flex-direction: column;
+    padding: 1rem;
+    margin: 2rem 0;
+    align-items: center; /* Nouveau: centre les enfants */
   }
 
   .text-side {
-    padding-right: 0; /* Supprimer le padding à droite */
-    margin-bottom: 2rem; /* Ajouter de l'espace entre le texte et les services */
+    width: 100%; /* Prend toute la largeur */
+    max-width: 500px; /* Limite la largeur max */
+    padding: 0 1rem; /* Garde un peu d'espace sur les côtés */
+    margin: 0 auto 2rem; /* Centre horizontalement et ajoute marge basse */
+    box-sizing: border-box; /* Inclut padding dans la largeur */
   }
 
   .cards {
-    padding: 1rem; /* Réduire le padding */
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 1.5rem;
+    margin: 0; /* Supprime les marges */
+    text-align: center; /* Centre le texte */
   }
 
+  /* Ajustements spécifiques pour le contenu */
   .card-title {
-    font-size: 1.25rem; /* Réduire la taille de la police */
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
   }
 
   .small-desc {
-    font-size: 0.9rem; /* Réduire la taille de la police */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
   }
 
-  .services-container {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajuster la taille des cartes */
-    gap: 1rem; /* Réduire l'espace entre les cartes */
-  }
-
-  .service-card {
-    padding: 1rem; /* Réduire le padding */
-  }
-
-  .service-icon {
-    width: 30px; /* Réduire la taille des icônes */
-    height: 30px;
-  }
-
-  .service-title {
-    font-size: 0.9rem; /* Réduire la taille de la police */
-  }
-
-  .go-arrow {
-    font-size: 1.25rem; /* Réduire la taille de la flèche */
+  .go-corner {
+    right: 15px;
+    top: 15px;
   }
 }
 
+/* Version très petits mobiles */
 @media (max-width: 480px) {
-  .quick-services-section {
-    padding: 0.5rem; /* Réduire encore le padding */
-    margin: 1rem 0; /* Réduire encore la marge */
-  }
-
   .text-side {
-    margin-bottom: 1rem; /* Réduire l'espace entre le texte et les services */
+    padding: 0 0.5rem; /* Réduit l'espace latéral */
   }
 
   .cards {
-    padding: 0.75rem; /* Réduire encore le padding */
+    padding: 1.25rem;
   }
 
   .card-title {
-    font-size: 1rem; /* Réduire encore la taille de la police */
+    font-size: 1.1rem;
   }
 
   .small-desc {
-    font-size: 0.8rem; /* Réduire encore la taille de la police */
-  }
-
-  .services-container {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Ajuster encore la taille des cartes */
-    gap: 0.75rem; /* Réduire encore l'espace entre les cartes */
-  }
-
-  .service-card {
-    padding: 0.75rem; /* Réduire encore le padding */
-  }
-
-  .service-icon {
-    width: 25px; /* Réduire encore la taille des icônes */
-    height: 25px;
-  }
-
-  .service-title {
-    font-size: 0.8rem; /* Réduire encore la taille de la police */
-  }
-
-  .go-arrow {
-    font-size: 1rem; /* Réduire encore la taille de la flèche */
+    font-size: 0.85rem;
   }
 }
 
@@ -525,7 +499,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   justify-items: center;
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 .personnalite-card {
@@ -625,18 +599,33 @@ body {
 }
 
 .members-btn {
-  display: flex;
+  display: inline-flex; /* Changé à inline-flex pour mieux s'adapter au contenu */
   align-items: center;
-  background-color: 
-  #32bde8;
+  justify-content: center; /* Centrage horizontal du contenu */
+  background-color: #32bde8;
   color: #fff;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 12px 24px; /* Padding réajusté */
   border: none;
   border-radius: 0.7rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  margin: 1rem;
+  transition: all 0.3s ease; /* Animation plus fluide */
+  margin: 1rem 2rem; /* Centrage horizontal avec margin auto */
+  width: auto; /* Largeur adaptative */
+  min-width: 200px; /* Largeur minimale */
+  max-width: 300px; /* Largeur maximale */
+  height: 45px; /* Hauteur fixe */
+  box-sizing: border-box; /* Inclut padding dans les dimensions */
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .members-btn {
+    width: 90%; /* Prend 90% de la largeur parente */
+    max-width: 100%; /* Annule la limite de 300px */
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 .members-btn i {
@@ -653,6 +642,70 @@ body {
   outline: none; /* Retirer le contour du bouton au focus */
 }
 
+
+@media (max-width: 768px) {
+  .personnalites-container {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 1.5rem;
+    padding: 0 1rem; /* Ajout de padding latéral */
+  }
+
+  .personnalite-card {
+    max-width: 100%; /* Occupe toute la largeur */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .personnalite-image img {
+    height: 250px; /* Hauteur légèrement augmentée pour mobile */
+  }
+
+  .personnalite-info {
+    padding: 1rem;
+  }
+
+  .personnalite-name {
+    font-size: 1.3rem;
+  }
+
+  .personnalite-contact {
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .contact-icon {
+    margin: 0 0.5rem;
+  }
+
+  .contact-info {
+    top: 30px; /* Ajustement position info contact */
+    background: white;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .members-btn {
+    width: 80%;
+    margin: 1.5rem auto; /* Centrage horizontal */
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  /* Ajustements pour les icônes sociales */
+  .share-icon {
+    top: 15px;
+    right: 15px;
+  }
+
+  .social-icon {
+    top: 40px;
+    right: 10px;
+  }
+}
 
 /* From Uiverse.io by SouravBandyopadhyay */ 
 .card-title {
@@ -957,4 +1010,107 @@ body {
 .wrapper .linkedin:hover .tooltip::before {
   background: #0a66c2; /* Couleur LinkedIn */
   color: #fff;
+}
+
+
+.voir-plus-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.voir-plus-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: #32bde8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid #32bde8;
+  transition: all 0.2s ease;
+}
+
+.voir-plus-btn:hover {
+  background-color: rgba(50, 189, 232, 0.1);
+  color: #32bde8;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .voir-plus-container {
+    margin-top: 1.5rem;
+  }
+  
+  .voir-plus-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* Partenaires Section */
+.partners-section {
+  padding: 20px 20px;
+  text-align: center;
+  
+}
+
+.partners-section h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.partner-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+}
+
+.partner-logo {
+  width: 100%;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Version Mobile (scroll horizontal) */
+@media (max-width: 768px) {
+  .partners-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+    overflow-x: auto; /* Active le scroll horizontal */
+    scroll-snap-type: x mandatory; /* Optionnel : alignement propre lors du scroll */
+    gap: 15px;
+    padding: 10px 0;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch; /* Scroll fluide sur iOS */
+  }
+
+  .partner-card {
+    flex: 0 0 auto; /* Empêche le rétrécissement */
+    width: 120px; /* Largeur fixe pour chaque logo */
+    scroll-snap-align: start; /* Optionnel */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre plus légère */
+  }
+
+  /* Cache la barre de scroll (optionnel) */
+  .partners-grid::-webkit-scrollbar {
+    display: none;
+  }
 }

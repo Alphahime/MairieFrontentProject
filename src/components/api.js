@@ -127,11 +127,21 @@ export const updateActualite = async (id, data) => {
 
 
 // Fonction pour récupérer tous les documents
-export const getDocuments = async () => {
+// Fonction pour récupérer tous les documents avec pagination
+export const getDocuments = async (page = 1) => {
     try {
-        const response = await fetch(`${API_URL}/documents`);
+        const response = await fetch(`${API_URL}/documents?page=${page}`);
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
         const data = await response.json();
-        return data;
+        return {
+            data: data.data || data, // Gère les réponses avec/sans pagination
+            pagination: {
+                currentPage: data.current_page || 1,
+                totalPages: data.last_page || 1
+            }
+        };
     } catch (error) {
         console.error("Error fetching documents:", error);
         throw error;
@@ -180,6 +190,8 @@ export const updateDocument = async (id, numeroDeActe, anneeDeNaissance) => {
     }
 };
 
+
+
 // Fonction pour supprimer un document
 export const deleteDocument = async (id) => {
     try {
@@ -194,6 +206,27 @@ export const deleteDocument = async (id) => {
     }
 };
 
+
+// Fonction pour confirmer un document
+export const confirmDocument = async (id) => {
+    try {
+        const response = await fetch(`${API_URL}/documents/${id}/confirm`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        
+        if (!response.ok) {
+            throw new Error("Échec de la confirmation du document");
+        }
+        
+        return await response.json();
+    } catch (error) {
+        console.error("Error confirming document:", error);
+        throw error;
+    }
+};
 // Exportez toutes les fonctions
 export { API_URL};
 
@@ -301,3 +334,4 @@ export const deleteActualite = async (id) => {
         throw error;
     }
 };
+

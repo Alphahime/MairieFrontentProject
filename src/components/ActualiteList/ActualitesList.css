@@ -4,12 +4,14 @@
 .actualites-section {
     padding: 40px 20px;
     background-color: #f9f9f9;
+    
   }
   
   /* Conteneur du titre */
   .title-container {
     text-align: center;
     margin-bottom: 30px;
+    margin: 4rem 0;
   }
   
   /* Titre de la section */

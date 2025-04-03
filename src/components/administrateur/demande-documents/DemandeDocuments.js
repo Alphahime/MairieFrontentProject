@@ -1,188 +1,153 @@
 import React, { useState, useEffect } from 'react';
 import './DemandeDocuments.css';
-import { API_URL } from '../../api'; // Import de l'URL de l'API
-import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa'; // Import des icônes
+import { getDocuments, deleteDocument, confirmDocument } from '../../api';
+import { FaTrash, FaCheck, FaSpinner } from 'react-icons/fa';
 
 const DemandeDocuments = () => {
     const [documents, setDocuments] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        id: null,
-        numero_de_acte: '',
-        annee_de_naissance: ''
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1
     });
-    const [isEditMode, setIsEditMode] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-
-    // Fetch documents with pagination
-    const fetchDocuments = async (page = 1) => {
-        setIsLoading(true);
-        try {
-            const response = await fetch(`${API_URL}/documents?page=${page}`);
-            if (!response.ok) {
-                throw new Error('Erreur lors de la récupération des documents');
-            }
-            const data = await response.json();
-            if (data && data.data) {
-                setDocuments(data.data);
-                setTotalPages(data.last_page);
-                setCurrentPage(data.current_page);
-            } else {
-                setDocuments([]); // Assurez-vous que `documents` est un tableau vide si `data.data` est undefined
-            }
-        } catch (error) {
-            console.error('Error fetching documents:', error);
-            setDocuments([]); // Assurez-vous que `documents` est un tableau vide en cas d'erreur
-        } finally {
-            setIsLoading(false);
-        }
-    };
+    const [processing, setProcessing] = useState({
+        delete: null,
+        confirm: null
+    });
 
     useEffect(() => {
-        fetchDocuments();
-    }, []);
-
-    // Handle form input changes
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    // Open popup for adding or editing a document
-    const openPopup = (document = null) => {
-        if (document) {
-            setFormData({ ...document });
-            setIsEditMode(true);
-        } else {
-            setFormData({
-                id: null,
-                numero_de_acte: '',
-                annee_de_naissance: ''
-            });
-            setIsEditMode(false);
-        }
-        setIsPopupOpen(true);
-    };
-
-    // Close popup
-    const closePopup = () => {
-        setIsPopupOpen(false);
-    };
-
-    // Submit form (add or edit)
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const url = isEditMode ? `${API_URL}/documents/${formData.id}` : `${API_URL}/documents`;
-        const method = isEditMode ? 'PUT' : 'POST';
-
-        try {
-            const response = await fetch(url, {
-                method,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            if (response.ok) {
-                fetchDocuments(currentPage);
-                closePopup();
+        const fetchDocuments = async () => {
+            try {
+                setLoading(true);
+                const response = await getDocuments(pagination.currentPage);
+                setDocuments(response.data);
+                setPagination(response.pagination);
+            } catch (err) {
+                setError(err.message);
+                console.error("Erreur de récupération:", err);
+            } finally {
+                setLoading(false);
             }
-        } catch (error) {
-            console.error('Error submitting document:', error);
+        };
+
+        fetchDocuments();
+    }, [pagination.currentPage]);
+
+    const handlePageChange = (newPage) => {
+        setPagination(prev => ({ ...prev, currentPage: newPage }));
+    };
+
+    const handleDelete = async (id) => {
+        if (!window.confirm("Êtes-vous sûr de vouloir supprimer ce document ?")) return;
+        
+        try {
+            setProcessing(prev => ({ ...prev, delete: id }));
+            await deleteDocument(id);
+            setDocuments(prev => prev.filter(doc => doc.id !== id));
+        } catch (err) {
+            setError(err.message);
+            console.error("Erreur de suppression:", err);
+        } finally {
+            setProcessing(prev => ({ ...prev, delete: null }));
         }
     };
 
-    // Delete a document
-    const handleDelete = async (id) => {
+    const handleConfirm = async (id) => {
         try {
-            await fetch(`${API_URL}/documents/${id}`, { method: 'DELETE' });
-            fetchDocuments(currentPage);
-        } catch (error) {
-            console.error('Error deleting document:', error);
+            setProcessing(prev => ({ ...prev, confirm: id }));
+            await confirmDocument(id);
+            setDocuments(prev => prev.map(doc => 
+                doc.id === id ? { ...doc, statut: 'confirmé' } : doc
+            ));
+        } catch (err) {
+            setError(err.message);
+            console.error("Erreur de confirmation:", err);
+        } finally {
+            setProcessing(prev => ({ ...prev, confirm: null }));
         }
     };
+
+    if (loading) return <div className="loading">Chargement en cours...</div>;
+    if (error) return <div className="error">Erreur: {error}</div>;
 
     return (
-        <div className="demande-documents">
-            <h1>Demande de Documents</h1>
-            <button className="add-button" onClick={() => openPopup()}>
-                <FaPlus /> Ajouter un document
-            </button>
-
-            {/* Tableau des documents */}
+        <div className="document-container">
+            <h2>Liste des Documents</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Numéro de l'acte</th>
-                        <th>Année de naissance</th>
+                        <th>Type Document</th>
+                        <th>Numéro Acte</th>
+                        <th>Année Naissance</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Statut</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {isLoading ? (
-                        <tr>
-                            <td colSpan="3" style={{ textAlign: 'center' }}>Chargement en cours...</td>
-                        </tr>
-                    ) : documents && documents.length > 0 ? (
-                        documents.map(document => (
-                            <tr key={document.id}>
-                                <td>{document.numero_de_acte}</td>
-                                <td>{document.annee_de_naissance}</td>
+                    {documents.length > 0 ? (
+                        documents.map((doc) => (
+                            <tr key={doc.id}>
+                                <td>{doc.type_document || 'Non spécifié'}</td>
+                                <td>{doc.numero_de_acte}</td>
+                                <td>{doc.annee_de_naissance}</td>
+                                <td>{doc.nom}</td>
+                                <td>{doc.prenom}</td>
+                                <td>{doc.telephone}</td>
                                 <td>
-                                    <button onClick={() => openPopup(document)}><FaEdit /></button>
-                                    <button onClick={() => handleDelete(document.id)}><FaTrash /></button>
+                                    <span className={`status-badge ${doc.statut}`}>
+                                        {doc.statut}
+                                    </span>
+                                </td>
+                                <td className="actions">
+                                    <button
+                                        onClick={() => handleConfirm(doc.id)}
+                                        disabled={processing.confirm === doc.id || doc.statut === 'confirmé'}
+                                        className={`confirm-btn ${doc.statut === 'confirmé' ? 'confirmed' : ''}`}
+                                    >
+                                        {processing.confirm === doc.id ? (
+                                            <FaSpinner className="spinner" />
+                                        ) : (
+                                            <FaCheck />
+                                        )}
+                                        {doc.statut === 'confirmé' ? 'Confirmé' : 'Confirmer'}
+                                    </button>
+                                    <button
+                                        onClick={() => handleDelete(doc.id)}
+                                        disabled={processing.delete === doc.id}
+                                        className="delete-btn"
+                                    >
+                                        {processing.delete === doc.id ? (
+                                            <FaSpinner className="spinner" />
+                                        ) : (
+                                            <FaTrash />
+                                        )}
+                                    </button>
                                 </td>
                             </tr>
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="3" style={{ textAlign: 'center' }}>Aucun document trouvé.</td>
+                            <td colSpan="8">Aucun document disponible</td>
                         </tr>
                     )}
                 </tbody>
             </table>
 
-            {/* Pagination */}
-            <div className="pagination">
-                {Array.from({ length: totalPages }, (_, i) => (
-                    <button
-                        key={i + 1}
-                        onClick={() => fetchDocuments(i + 1)}
-                        className={currentPage === i + 1 ? 'active' : ''}
-                    >
-                        {i + 1}
-                    </button>
-                ))}
-            </div>
-
-            {/* Popup formulaire */}
-            {isPopupOpen && (
-                <div className="popup">
-                    <div className="popup-content">
-                        <h2>{isEditMode ? 'Modifier un document' : 'Ajouter un document'}</h2>
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="numero_de_acte"
-                                placeholder="Numéro de l'acte"
-                                value={formData.numero_de_acte}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            <input
-                                type="number"
-                                name="annee_de_naissance"
-                                placeholder="Année de naissance"
-                                value={formData.annee_de_naissance}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            <button type="submit">{isEditMode ? 'Modifier' : 'Ajouter'}</button>
-                            <button type="button" onClick={closePopup}>Annuler</button>
-                        </form>
-                    </div>
+            {pagination.totalPages > 1 && (
+                <div className="pagination">
+                    {Array.from({ length: pagination.totalPages }, (_, i) => (
+                        <button
+                            key={i + 1}
+                            onClick={() => handlePageChange(i + 1)}
+                            className={pagination.currentPage === i + 1 ? 'active' : ''}
+                        >
+                            {i + 1}
+                        </button>
+                    ))}
                 </div>
             )}
         </div>

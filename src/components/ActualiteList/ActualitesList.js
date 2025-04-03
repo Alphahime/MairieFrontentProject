@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getActualites } from "../api";
 import { Link } from "react-router-dom";
-import "./Actualite.css";
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import "./ActualitesList.css";
+
 
 const API_URL = 'http://localhost:8000'; // À adapter selon votre configuration
 
@@ -37,10 +36,8 @@ const Actualite = () => {
 
     return (
         <div className="bigcontainactu">
-            <Header />
-            <div className="banniere">
-                <h1>Actualités</h1>
-            </div>
+           
+          
             <div className="actualite-container">
                 <div className="actualite-grid">
                     {actualites.map((actualite) => (
@@ -68,7 +65,7 @@ const Actualite = () => {
                     ))}
                 </div>
             </div>
-            <Footer />
+            
         </div>
     );
 };
