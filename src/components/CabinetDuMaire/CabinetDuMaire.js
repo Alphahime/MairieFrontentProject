@@ -4,11 +4,22 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import maireImage from "../../assets/images/mairethiaroyesurmer.jpg"; // Import de l'image
 import { FaCalendarAlt, FaEnvelope, FaUsers, FaHandshake, FaBullhorn } from "react-icons/fa"; // Import des icônes
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const CabinetDuMaire = () => {
   return (
     <div className="bigcontentcab">
       <Header />
+       <div className="mobile-back-container">
+                  <Link 
+                    to="/" 
+                    className="mobile-back-button"
+                    aria-label="Retour au conseil municipal"
+                  >
+                    <FaArrowLeft aria-hidden="true" />
+                    <span>Retour</span>
+                  </Link>
+                </div>
       <div className="cabinet-container">
         {/* Bannière avec image */}
         <div className="cabinet-banner" style={{ backgroundImage: `url(${maireImage})` }}>

@@ -3,7 +3,8 @@ import "./ActeNaissance.css";
 import { API_URL } from "../api";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const ActeNaissance = () => {
     // États pour gérer les champs du formulaire
     const [formData, setFormData] = useState({

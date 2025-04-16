@@ -2,7 +2,8 @@ import React from "react";
 import "./Deliberation.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 // Import des fichiers PDF
 import deliberation016 from "../../assets/images/D_lib_ration nø016 du 09 Octobre 2024.pdf";
 import deliberation013 from "../../assets/images/D_lib_ration nø013 du 31 Juillet 2024.pdf";
@@ -41,6 +42,16 @@ const Deliberation = () => {
   return (
     <div className="bigcontent">
       <Header />
+       <div className="mobile-back-container">
+                  <Link 
+                    to="/" 
+                    className="mobile-back-button"
+                    aria-label="Retour au conseil municipal"
+                  >
+                    <FaArrowLeft aria-hidden="true" />
+                    <span>Retour</span>
+                  </Link>
+                </div>
       <div className="deliberation-container">
         <h1>Délibérations</h1>
         <p>

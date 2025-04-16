@@ -3,11 +3,22 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { FaFileAlt, FaSignOutAlt, FaFolder, FaCalendarAlt, FaBullhorn } from 'react-icons/fa'; // Import des icônes
 import './BureauDesMarchesPublics.css';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const BureauDesMarchesPublics = () => {
   return (
     <div className="bigcontent">
       <Header />
+       <div className="mobile-back-container">
+                  <Link 
+                    to="/" 
+                    className="mobile-back-button"
+                    aria-label="Retour au conseil municipal"
+                  >
+                    <FaArrowLeft aria-hidden="true" />
+                    <span>Retour</span>
+                  </Link>
+                </div>
       <div className="bureau-container">
         {/* Texte en haut */}
         <div className="bureau-text">

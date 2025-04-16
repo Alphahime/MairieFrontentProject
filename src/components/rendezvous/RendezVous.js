@@ -3,7 +3,8 @@ import './Rendezvous.css';
 import { createRendezVous } from "../api";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const RendezVous = () => {
     const [formData, setFormData] = useState({
         nom_utilisateur: "",
@@ -143,6 +144,16 @@ const RendezVous = () => {
     return (
         <div className="bigcontainrv">
             <Header />
+             <div className="mobile-back-container">
+                  <Link 
+                    to="/" 
+                    className="mobile-back-button"
+                    aria-label="Retour au conseil municipal"
+                  >
+                    <FaArrowLeft aria-hidden="true" />
+                    <span>Retour</span>
+                  </Link>
+                </div>
             <div className="banniere">
                 <h1>Prendre un rendez-vous</h1>
             </div>

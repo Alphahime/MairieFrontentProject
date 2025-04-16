@@ -3,11 +3,22 @@ import { FaUserTie, FaHandshake, FaTasks, FaUsers } from "react-icons/fa"; // Im
 import "./SecretariatMunicipal.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const SecretariatMunicipal = () => {
   return (
     <div className="contentheader">
       <Header />
+       <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <div className="secretariat-container">
         {/* Texte en haut */}
         <div className="content">

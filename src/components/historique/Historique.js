@@ -3,7 +3,7 @@ import "./Historique.css";
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-
+import { FaArrowLeft } from 'react-icons/fa';
 const Historique = () => {
   const [activeDate, setActiveDate] = useState(null);
 
@@ -14,6 +14,16 @@ const Historique = () => {
   return (
     <main className="historique-page">
       <Header />
+       <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <section className="hero-historique">
         <div className="hero-overlay">
           <h1>Historique de Thiaroye sur Mer</h1>
@@ -26,7 +36,7 @@ const Historique = () => {
           {/* Section 1 : Origines et Fondation */}
           <div className="section-item">
             <img
-              src={require("../../assets/images/historique1.jpg")}
+              src={require("../../assets/images/De gauche à droite _ Gorgui Mandaw Diouf, El Hadj Serigne Mor Niang, Mamadou Kabirou Mbodj.jpg")}
               alt="Origines et Fondation"
               className="section-image"
             />
@@ -41,7 +51,7 @@ const Historique = () => {
           {/* Section 2 : Événements Historiques */}
           <div className="section-item reverse">
             <img
-              src={require("../../assets/images/historique2.jpg")}
+              src={require("../../assets/images/Photos dignitaires lebou de Thiaroye sur mer .jpg")}
               alt="Événements Historiques"
               className="section-image"
             />
@@ -100,7 +110,7 @@ const Historique = () => {
           {/* Section 3 : Organisation Communautaire */}
           <div className="section-item">
             <img
-              src={require("../../assets/images/historique3.jpg")}
+              src={require("../../assets/images/Équipe de Dab Rey première équipe de football de la commune .jpg")}
               alt="Organisation Communautaire"
               className="section-image"
             />
@@ -115,7 +125,7 @@ const Historique = () => {
           {/* Section 4 : Économie et Culture */}
           <div className="section-item reverse">
             <img
-              src={require("../../assets/images/historique1.jpg")}
+              src={require("../../assets/images/Mame Moussé Niang chef de village (1947) Thiaroye sur mer en compagnie de Blaise Diagne .jpg")}
               alt="Économie et Culture"
               className="section-image"
             />

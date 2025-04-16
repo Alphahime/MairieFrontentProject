@@ -3,11 +3,22 @@ import './DAGF.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { FaMoneyBillAlt, FaChartLine, FaBook, FaUsers, FaReceipt } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const DAGF = () => {
   return (
     <div className="bigcontentdaggf">
       <Header />
+       <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <div className="dagf-container">
         {/* Texte en haut */}
         <div className="dagf-text">

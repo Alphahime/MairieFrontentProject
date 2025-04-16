@@ -3,11 +3,22 @@ import { FaBuilding, FaUserTie, FaMapMarkerAlt } from "react-icons/fa";
 import "./ServiceEtatCivil.css";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const ServiceEtatCivil = () => {
   return (
     <div className="bigcontent">
       <Header />
+       <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <div className="etat-civil-container">
         {/* Texte en haut */}
         <div className="header-etat-civil">

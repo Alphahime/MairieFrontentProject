@@ -4,7 +4,8 @@ import { FaFilter, FaCalendarCheck, FaCalendarDay, FaCalendarTimes, FaSearch } f
 import './Agenda.css';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const Agenda = () => {
     const [projets, setProjets] = useState([]);
     const [filtreStatut, setFiltreStatut] = useState('Tous'); // État pour le filtre
@@ -89,7 +90,16 @@ const Agenda = () => {
                 <h1>Projets/Programmes</h1>
                 <p>Découvrez tous les projets et programmes de la mairie .</p>
             </div>
-
+ <div className="mobile-back-container">
+      <Link 
+        to="/" 
+        className="mobile-back-button"
+        aria-label="Retour au conseil municipal"
+      >
+        <FaArrowLeft aria-hidden="true" />
+        <span>Retour</span>
+      </Link>
+    </div>
             {/* Filtres et recherche */}
             <div className="filtre-recherche-container">
                 {/* Boutons de filtre */}

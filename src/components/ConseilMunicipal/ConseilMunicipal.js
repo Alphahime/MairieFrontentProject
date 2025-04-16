@@ -2,13 +2,25 @@ import React from "react";
 import "./ConseilMunicipal.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const ConseilMunicipal = () => {
   return (
     <div className="bigcontent">
       <Header />
       <div className="conseil-container">
         {/* Section Conseil Municipal */}
+
+        <div className="mobile-back-container">
+      <Link 
+        to="/" 
+        className="mobile-back-button"
+        aria-label="Retour au conseil municipal"
+      >
+        <FaArrowLeft aria-hidden="true" />
+        <span>Retour</span>
+      </Link>
+    </div>
         <section className="conseil-section">
           <h1>Conseil Municipal</h1>
           <p>

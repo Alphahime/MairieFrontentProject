@@ -3,11 +3,23 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { FaUsers, FaSchool, FaRegBuilding, FaChartLine } from 'react-icons/fa'; // Importer les icônes
 import './BureauDeDeveloppementLocal.css';
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const BureauDeDeveloppementLocal = () => {
   return (
     <div className="bigcontent">
       <Header />
+
+      <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <div className="bdl-container">
         {/* Texte en haut */}
         <div className="bdl-text">

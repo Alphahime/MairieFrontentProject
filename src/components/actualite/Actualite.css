@@ -72,3 +72,49 @@
   height: auto;
   background-color: #9b1812;
 }
+
+/* ============ VERSION MOBILE ============ */
+@media screen and (max-width: 768px) {
+  .actualite-container {
+    padding: 15px; /* Réduire le padding */
+  }
+
+  .actualite-container h1 {
+    font-size: 22px; /* Taille réduite pour mobile */
+    margin-bottom: 15px;
+  }
+
+  .actualite-grid {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 15px;
+  }
+
+  .actualite-card {
+    padding: 12px;
+  }
+
+  .actualite-image {
+    height: 200px; /* Hauteur réduite */
+  }
+
+  .actualite-card h2 {
+    font-size: 16px; /* Texte plus petit */
+  }
+
+  .actualite-card .date-publication {
+    font-size: 0.8rem; /* Taille réduite */
+    padding: 4px 8px;
+    width: auto; /* Largeur automatique */
+  }
+}
+
+/* Optionnel : Adaptation pour très petits écrans */
+@media screen and (max-width: 480px) {
+  .actualite-container h1 {
+    font-size: 20px;
+  }
+
+  .actualite-image {
+    height: 180px;
+  }
+}

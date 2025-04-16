@@ -3,11 +3,22 @@ import "./MaireEtAdjoints.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { FaUser, FaUsers, FaHandshake, FaTasks, FaBuilding } from "react-icons/fa"; // Import des icônes
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const MaireEtAdjoints = () => {
   return (
     <div className="bigcontent">
       <Header />
+       <div className="mobile-back-container">
+            <Link 
+              to="/" 
+              className="mobile-back-button"
+              aria-label="Retour au conseil municipal"
+            >
+              <FaArrowLeft aria-hidden="true" />
+              <span>Retour</span>
+            </Link>
+          </div>
       <div className="maire-adjoints-container">
         {/* Section Exécutif Municipal */}
         <section className="executif-section">

@@ -4,6 +4,8 @@ import { getActualites } from "../api";
 import "./DetailsActualite.css";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const API_URL = 'http://localhost:8000'; // À adapter selon votre configuration
 
@@ -47,6 +49,16 @@ const DetailsActualite = () => {
             <div className="banniere">
                 <h1>{actualite.titre}</h1>
             </div>
+             <div className="mobile-back-container">
+                  <Link 
+                    to="/actualite" 
+                    className="mobile-back-button"
+                    aria-label="Retour au conseil municipal"
+                  >
+                    <FaArrowLeft aria-hidden="true" />
+                    <span>Retour</span>
+                  </Link>
+                </div>
             <div className="details-actualite-container">
                 {actualite.image_url && (
                     <img 

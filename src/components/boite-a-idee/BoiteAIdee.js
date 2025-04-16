@@ -3,7 +3,8 @@ import "./BoiteAIdee.css";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { submitBoiteIdee } from "../api";
-
+import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 const BoiteAIdee = () => {
     const [formData, setFormData] = useState({
         titre: "",
@@ -138,6 +139,16 @@ const BoiteAIdee = () => {
     return (
         <div className="bigcontent">
             <Header />
+               <div className="mobile-back-container">
+                        <Link 
+                          to="/" 
+                          className="mobile-back-button"
+                          aria-label="Retour au conseil municipal"
+                        >
+                          <FaArrowLeft aria-hidden="true" />
+                          <span>Retour</span>
+                        </Link>
+                      </div>
             <div className="boite-idee-container">
                 <div className="banniere">
                     <h1>Boîte à idées</h1>

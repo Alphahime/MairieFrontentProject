@@ -1,5 +1,6 @@
 // src/components/api.js
 
+
 const API_URL = "http://127.0.0.1:8000/api";
 
 // Fonction pour la connexion
@@ -9,13 +10,18 @@ export const loginUser = async (email, password) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Accept": "application/json"
             },
-            body: JSON.stringify({
-                email: email,
-                password: password,
-            }),
+            body: JSON.stringify({ email, password }),
         });
+
         const data = await response.json();
+
+        if (!response.ok) {
+            // Si le backend retourne un message d'erreur
+            throw new Error(data.message || "Échec de la connexion");
+        }
+
         return data;
     } catch (error) {
         console.error("Error during login:", error);
@@ -335,3 +341,30 @@ export const deleteActualite = async (id) => {
     }
 };
 
+
+export const subscribeToNewsletter = async (email) => {
+    try {
+      const response = await fetch(`${API_URL}/subscribers`, {  // Changé de newsletters à subscribers
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(
+          data.message || 
+          data.errors?.email?.[0] ||  // Pour récupérer les erreurs de validation
+          'Erreur lors de l\'inscription'
+        );
+      }
+  
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  };

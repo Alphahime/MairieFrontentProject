@@ -1,29 +1,65 @@
 import React, { useState } from "react";
 import "./Connexion.css";
-import { loginUser } from "../../api"; 
+import { useAuth } from "../../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../api"; // Importez la fonction d'API
 
 const Connexion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    setError("");
 
-    // Appel à l'API pour l'authentification
-    const result = await loginUser(email, password); 
-    if (result && result.token) {
-      console.log("Connexion réussie:", result);
-      // Gère la suite après une connexion réussie (stockage du token, redirection, etc.)
-    } else {
-      console.log("Erreur de connexion");
-      // Afficher un message d'erreur ou une autre action
+    try {
+      // Utilisez la fonction importée de api.js
+      const data = await loginUser(email, password);
+
+      // Stocke le token et les données utilisateur
+      login(data.token, {
+        email: data.user.email,
+        role: data.user.role,
+        name: data.user.name
+      });
+
+      // Redirection basée sur le rôle
+      switch(data.user.role) {
+        case 'super_admin':
+          navigate('/admin');
+          break;
+        case 'responsable_actualites':
+          navigate('/admin/actualites');
+          break;
+        case 'responsable_rendezvous':
+          navigate('/admin/gestion-rendez-vous');
+          break;
+        case 'responsable_documents':
+          navigate('/admin/demande-documents');
+          break;
+        case 'responsable_idees':
+          navigate('/admin/boite-a-idee');
+          break;
+        case 'responsable_projets':
+          navigate('/admin/projets');
+          break;
+        default:
+          navigate('/');
+      }
+
+    } catch (err) {
+      setError(err.message || "Email ou mot de passe incorrect");
+      console.error("Erreur de connexion:", err);
     }
   };
 
   return (
     <div className="connexion-container">
       <h2>Connexion</h2>
+      {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit}>
         <input 
           type="email" 
